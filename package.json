@@ -1,6 +1,15 @@
 {
-  "name": "learn-dev",
+  "name": "@vos/learn",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "private": true
+  "exports": {
+    "./views/Learn": "./src/views/Learn/index.jsx",
+    "./lib/muscleMapping": "./src/lib/muscleMapping.js",
+    "./lib/firebase": "./src/lib/firebase.js"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  }
 }
