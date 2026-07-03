@@ -6,8 +6,8 @@ import AnatDetail from "./AnatDetail";
 import ExplorerHeader from "./ExplorerHeader";
 import AnatomyExplorer from "./AnatomyExplorer";
 import QuizMode from "./QuizMode";
-import AnatomyDetailModal from "../../components/AnatomyDetailModal";
-import PlanBuilder from "../../components/PlanBuilder.jsx";
+import AnatomyDetailModal from "@components/AnatomyDetailModal";
+import PlanBuilder from "@components/PlanBuilder.jsx";
 
 export default function Learn({ onInspectExercise, muscleLanguage = 'de', taxonomy = null }) {
   const [exercises, setExercises] = useState([]);
