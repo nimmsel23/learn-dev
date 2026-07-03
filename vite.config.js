@@ -14,9 +14,10 @@ export default defineConfig(({ mode }) => {
     resolve: {
       preserveSymlinks: true,
       alias: {
-        '@src':        resolve(__dirname, './src'),
-        '@db':         resolve('/home/alpha/fitness-dev/src/db.firestore.js'),
-        '@components': resolve('/home/alpha/fitness-dev/src/components'),
+        '@src':              resolve(__dirname, './src'),
+        '@db':               resolve('/home/alpha/fitness-dev/src/db.firestore.js'),
+        '@components':       resolve('/home/alpha/fitness-dev/src/components'),
+        '@fitness/components': resolve('/home/alpha/fitness-dev/src/components'),
       },
     },
     server: {
