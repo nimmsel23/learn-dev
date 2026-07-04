@@ -15,7 +15,11 @@
     "build:cloud": "vite build --mode firebase --config vite.config.js",
     "deploy": "npm run build:cloud && firebase deploy --only hosting --project fitness-aos",
     "deploy:cloud": "npm run build:cloud && firebase deploy --only hosting --project fitness-aos",
-    "preview": "vite preview --config vite.config.js"
+    "preview": "vite preview --config vite.config.js",
+    "deploy:preview": "npm run build:cloud && firebase hosting:channel:deploy preview --expires 24h",
+    "deploy:prev": "npm run build:cloud && firebase hosting:channel:deploy preview --expires 24h",
+    "build:preview": "npm run build:cloud && firebase hosting:channel:deploy preview --expires 24h",
+    "build:prev": "npm run build:cloud && firebase hosting:channel:deploy preview --expires 24h"
   },
   "dependencies": {
     "body-muscles": "^1.0.0",
