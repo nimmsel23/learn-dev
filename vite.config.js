@@ -36,7 +36,7 @@ export default defineConfig(({ mode }) => {
       preserveSymlinks: true,
       alias: {
         '@src':                resolve(__dirname, './src'),
-        '@db':                 resolve(FITNESS_SRC, isFirebase ? 'db.firestore.js' : 'db.js'),
+        '@db':                 resolve(FITNESS_SRC, isFirebase ? 'lib/db/index.firestore.js' : 'lib/db/index.js'),
         '@utils':              resolve(FITNESS_SRC, 'lib/utils.js'),
         '@components':         resolve(FITNESS_SRC, 'components'),
         '@fitness/components': resolve(FITNESS_SRC, 'components'),
