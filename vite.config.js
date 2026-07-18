@@ -7,7 +7,6 @@ import { fileURLToPath } from 'url'
 const __dirname  = dirname(fileURLToPath(import.meta.url))
 const FITNESS_DEV = resolve(__dirname, '../fitness-dev')
 const FITNESS_SRC = resolve(FITNESS_DEV, 'src')
-const FUEL_ROOT   = resolve(__dirname, '../fuel-dev')
 const BACKEND     = 'http://localhost:9100'
 
 export default defineConfig(({ mode }) => {
@@ -43,7 +42,6 @@ export default defineConfig(({ mode }) => {
         '@fitness/components': resolve(FITNESS_SRC, 'components'),
         '@constants':          resolve(FITNESS_SRC, 'constants'),
         '@fitness/constants':  resolve(FITNESS_SRC, 'constants'),
-        '@fuel':               resolve(FUEL_ROOT, 'src/client'),
       },
     },
     server: {
