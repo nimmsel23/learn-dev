@@ -9,7 +9,7 @@ import QuizMode from "./QuizMode";
 import AnatomyDetailModal from "@fitness/components/AnatomyDetailModal";
 import PlanBuilder from "@fitness/components/PlanBuilder.jsx";
 
-export default function Learn({ onInspectExercise, muscleLanguage = 'de', taxonomy = null }) {
+export default function Learn({ subTab = null, onInspectExercise, muscleLanguage = 'de', taxonomy = null }) {
   const [exercises, setExercises] = useState([]);
   const [selected, setSelected]   = useState(null);
   const [viewMode, setViewMode]   = useState('library'); // 'library', 'explorer', or 'quiz'
@@ -23,6 +23,20 @@ export default function Learn({ onInspectExercise, muscleLanguage = 'de', taxono
   const [selectedMuscleId, setSelectedMuscleId] = useState(null);
   const [muscleData, setMuscleData] = useState(null);
   const [muscleLoading, setMuscleLoading] = useState(false);
+
+  useEffect(() => {
+    if (subTab === 'quiz') {
+      setViewMode('quiz');
+      return;
+    }
+    if (subTab === 'anatomy') {
+      setViewMode('explorer');
+      return;
+    }
+    if (subTab === 'exercises') {
+      setViewMode('library');
+    }
+  }, [subTab]);
 
   useEffect(() => {
     getAllExercises()
