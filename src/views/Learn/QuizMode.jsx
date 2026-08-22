@@ -45,16 +45,16 @@ export default function QuizMode({ exercises, onExit }) {
   );
 
   if (idx >= cards.length) return (
-    <div className="card p-6 text-center space-y-4 shadow-xl border-fit-line">
-      <CheckCircle size={32} className="text-fit-accent mx-auto" />
-      <div className="text-lg font-black text-fit-ink">Quiz beendet</div>
-      <div className="text-sm font-bold opacity-50">{score.correct} / {score.total} richtig</div>
-      <div className="flex gap-3 justify-center mt-4">
+    <div className="card p-6 text-center space-y-3 border-fit-line">
+      <CheckCircle size={28} className="text-fit-accent mx-auto" />
+      <div className="text-base font-bold text-fit-ink">Quiz beendet</div>
+      <div className="text-sm" style={{ color: 'var(--dim)' }}>{score.correct} / {score.total} richtig</div>
+      <div className="flex gap-2.5 justify-center mt-3">
         <button onClick={() => { setIdx(0); setScore({ correct: 0, total: 0 }); setRevealed(false); }}
-          className="btn bg-fit-bg2 border border-fit-line flex items-center gap-2 px-6">
-          <RotateCcw size={14} /> Nochmal
+          className="btn bg-fit-bg2 border border-fit-line flex items-center gap-2 px-5 text-sm font-semibold">
+          <RotateCcw size={13} /> Nochmal
         </button>
-        <button onClick={onExit} className="btn bg-fit-accent/10 border border-fit-accent/20 text-fit-accent px-6">
+        <button onClick={onExit} className="btn bg-fit-accent/10 border border-fit-accent/20 text-fit-accent px-5 text-sm font-semibold">
           Fertig
         </button>
       </div>
@@ -65,27 +65,27 @@ export default function QuizMode({ exercises, onExit }) {
   return (
     <div className="space-y-3 max-w-xl mx-auto">
       <div className="flex items-center justify-between px-1">
-        <span className="text-[10px] font-black uppercase tracking-widest text-fit-dim">
+        <span className="text-[11px] font-medium" style={{ color: 'var(--dim)' }}>
           {idx + 1} / {cards.length} · {card.exercise}
         </span>
-        <button onClick={onExit} className="text-[10px] font-black uppercase tracking-widest text-fit-dim hover:text-accent">Abbrechen</button>
+        <button onClick={onExit} className="text-[11px] font-medium" style={{ color: 'var(--dim)' }}>Abbrechen</button>
       </div>
-      <div className="card p-6 min-h-[160px] flex flex-col justify-between border border-fit-line shadow-lg">
+      <div className="card p-5 min-h-[160px] flex flex-col justify-between border border-fit-line">
         <p className="text-sm font-medium leading-relaxed text-fit-ink">{card.question}</p>
         {revealed ? (
-          <div className="mt-6 pt-4 border-t border-fit-line/50 space-y-4 animate-in fade-in">
-            <p className="text-[11px] leading-relaxed text-fit-dim">{card.answer}</p>
-            <div className="flex gap-3">
-              <button onClick={() => answer(false)} className="flex-1 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest bg-fit-red/10 text-fit-red border border-fit-red/20 transition-all hover:bg-red/20">
+          <div className="mt-5 pt-4 border-t border-fit-line/50 space-y-3 animate-in fade-in">
+            <p className="text-[12px] leading-relaxed text-fit-dim">{card.answer}</p>
+            <div className="flex gap-2.5">
+              <button onClick={() => answer(false)} className="flex-1 py-2.5 rounded-xl text-sm font-semibold bg-fit-red/10 text-fit-red border border-fit-red/20 transition-all hover:bg-red/20">
                 Nochmal
               </button>
-              <button onClick={() => answer(true)} className="flex-1 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest bg-fit-accent/10 text-fit-accent border border-fit-accent/20 transition-all hover:bg-accent/20">
+              <button onClick={() => answer(true)} className="flex-1 py-2.5 rounded-xl text-sm font-semibold bg-fit-accent/10 text-fit-accent border border-fit-accent/20 transition-all hover:bg-accent/20">
                 Gewusst
               </button>
             </div>
           </div>
         ) : (
-          <button onClick={() => setRevealed(true)} className="mt-6 w-full py-3 rounded-xl text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-2 bg-fit-bg2 border border-fit-line text-fit-ink hover:border-accent transition-all">
+          <button onClick={() => setRevealed(true)} className="mt-5 w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 bg-fit-bg2 border border-fit-line text-fit-ink hover:border-accent transition-all">
             Antwort zeigen <ChevronRight size={14} />
           </button>
         )}
