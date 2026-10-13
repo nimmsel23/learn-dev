@@ -5,7 +5,7 @@ import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname  = dirname(fileURLToPath(import.meta.url))
-const FITNESS_DEV = resolve(__dirname, '../fitness-dev')
+const FITNESS_DEV = resolve(__dirname, '../fitness-app')
 const FITNESS_SRC = resolve(FITNESS_DEV, 'src')
 const BACKEND     = 'http://localhost:9100'
 
@@ -29,6 +29,7 @@ export default defineConfig(({ mode }) => {
           globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
           navigateFallback: '/index.html',
           navigateFallbackDenylist: [/^\/fitness/, /^\/exercise/, /^\/session/, /^\/coverage/, /^\/health/],
+          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
         },
       }),
     ],
