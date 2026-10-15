@@ -6,13 +6,14 @@ import AnatDetail from "./AnatDetail";
 import ExplorerHeader from "./ExplorerHeader";
 import AnatomyExplorer from "./AnatomyExplorer";
 import QuizMode from "./QuizMode";
+import StrengthMatrix from "./StrengthMatrix";
 import AnatomyDetailModal from "@fitness/components/AnatomyDetailModal";
 import PlanBuilder from "@fitness/components/PlanBuilder.jsx";
 
 export default function Learn({ subTab = null, onInspectExercise, muscleLanguage = 'de', taxonomy = null }) {
   const [exercises, setExercises] = useState([]);
   const [selected, setSelected]   = useState(null);
-  const [viewMode, setViewMode]   = useState('library'); // 'library', 'explorer', or 'quiz'
+  const [viewMode, setViewMode]   = useState('library'); // 'library', 'explorer', 'quiz' or 'strength'
   const [q, setQ]                 = useState("");
   const [recent, setRecent]       = useState([]);
   const [loading, setLoading]     = useState(true);
@@ -31,6 +32,10 @@ export default function Learn({ subTab = null, onInspectExercise, muscleLanguage
     }
     if (subTab === 'anatomy') {
       setViewMode('explorer');
+      return;
+    }
+    if (subTab === 'strength') {
+      setViewMode('strength');
       return;
     }
     if (subTab === 'exercises') {
@@ -75,6 +80,15 @@ export default function Learn({ subTab = null, onInspectExercise, muscleLanguage
      );
   }
 
+
+  if (viewMode === 'strength') {
+     return (
+        <div className="pb-20 lg:pb-0 px-2">
+           <ExplorerHeader viewMode={viewMode} setViewMode={setViewMode} onStartQuiz={() => setViewMode('quiz')} hasRecent={recent.length > 0} />
+           <StrengthMatrix />
+        </div>
+     );
+  }
 
   return (
     <div className="pb-20 lg:pb-0 px-2">

@@ -1,4 +1,4 @@
-import { Search, Brain, Zap } from "lucide-react";
+import { Search, Brain, Zap, Dumbbell } from "lucide-react";
 
 export default function ExplorerHeader({ viewMode, setViewMode, onStartQuiz, hasRecent }) {
   return (
@@ -28,6 +28,16 @@ export default function ExplorerHeader({ viewMode, setViewMode, onStartQuiz, has
           }}>
           <Brain size={14} />
           Explorer
+        </button>
+        <button
+          onClick={() => setViewMode('strength')}
+          className="flex items-center gap-1.5 pb-1"
+          style={{
+            color: viewMode === 'strength' ? 'var(--accent)' : 'var(--dim)',
+            borderBottom: viewMode === 'strength' ? '2px solid var(--accent)' : '2px solid transparent',
+          }}>
+          <Dumbbell size={14} />
+          Stärke
         </button>
         {hasRecent && (
           <button
