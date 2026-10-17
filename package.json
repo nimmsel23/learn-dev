@@ -2,6 +2,7 @@
   "name": "@vos/learn",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.3.0",
   "type": "module",
   "exports": {
     "./views/Learn": "./src/views/Learn/index.jsx",
@@ -13,13 +14,13 @@
     "build": "vite build --config vite.config.js",
     "build:firebase": "vite build --mode firebase --config vite.config.js",
     "build:cloud": "vite build --mode firebase --config vite.config.js",
-    "deploy": "npm run build:cloud && firebase deploy --only hosting --project fitness-aos",
-    "deploy:cloud": "npm run build:cloud && firebase deploy --only hosting --project fitness-aos",
+    "deploy": "pnpm run build:cloud && firebase deploy --only hosting --project fitness-aos",
+    "deploy:cloud": "pnpm run build:cloud && firebase deploy --only hosting --project fitness-aos",
     "preview": "vite preview --config vite.config.js",
-    "deploy:preview": "npm run build:cloud && node scripts/deploy-preview.mjs",
-    "deploy:prev": "npm run deploy:preview",
-    "build:preview": "npm run deploy:preview",
-    "build:prev": "npm run deploy:preview"
+    "deploy:preview": "pnpm run build:cloud && node scripts/deploy-preview.mjs",
+    "deploy:prev": "pnpm run deploy:preview",
+    "build:preview": "pnpm run deploy:preview",
+    "build:prev": "pnpm run deploy:preview"
   },
   "dependencies": {
     "body-muscles": "^1.0.0",
