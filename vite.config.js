@@ -1,11 +1,13 @@
+import { vosChangelog } from './scripts/vos-changelog/vos-changelog-vite.mjs'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
+import { existsSync } from 'fs'
 
 const __dirname  = dirname(fileURLToPath(import.meta.url))
-const FITNESS_DEV = resolve(__dirname, '../fitness-app')
+const FITNESS_DEV = [resolve(__dirname, '../fitness-app'), resolve(__dirname, '../fitness-dev')].find(existsSync)
 const FITNESS_SRC = resolve(FITNESS_DEV, 'src')
 const BACKEND     = 'http://localhost:9100'
 
@@ -14,7 +16,7 @@ export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
     base: '/',
-    plugins: [
+    plugins: [vosChangelog({ appId: 'learn', appName: 'Learn', accent: '#fb923c' }),
       react(),
       // Ersetzt den hartkodierten public/sw.js (learn-vos-v1, nie gebumpt) —
       // workbox precached mit Content-Hashes, Versionierung passiert von selbst.
