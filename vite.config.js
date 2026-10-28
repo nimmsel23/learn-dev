@@ -5,11 +5,15 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import { existsSync } from 'fs'
+import { pathToFileURL } from 'url'
 
 const __dirname  = dirname(fileURLToPath(import.meta.url))
 const FITNESS_DEV = [resolve(__dirname, '../fitness-app'), resolve(__dirname, '../fitness-dev')].find(existsSync)
 const FITNESS_SRC = resolve(FITNESS_DEV, 'src')
 const BACKEND     = 'http://localhost:9100'
+// fitness-app-Quellen importieren views/SixPack|Plan|Skills, die nur als Submodule existieren —
+// derselbe Resolver wie in fitness/habits/Shell, sonst bricht der Build (workoutDoc.js nicht auflösbar).
+const { miniAppSubmodulePlugin } = await import(pathToFileURL(resolve(FITNESS_DEV, 'vite-miniapp-submodules.mjs')).href)
 
 export default defineConfig(({ mode }) => {
   const isFirebase = mode === 'firebase'
@@ -17,6 +21,7 @@ export default defineConfig(({ mode }) => {
     root: __dirname,
     base: '/',
     plugins: [vosChangelog({ appId: 'learn', appName: 'Learn', accent: '#fb923c' }),
+      miniAppSubmodulePlugin(FITNESS_DEV),
       react(),
       // Ersetzt den hartkodierten public/sw.js (learn-vos-v1, nie gebumpt) —
       // workbox precached mit Content-Hashes, Versionierung passiert von selbst.
