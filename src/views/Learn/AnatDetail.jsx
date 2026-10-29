@@ -8,6 +8,14 @@ export default function AnatDetail({ anatomy, ex, onBack, isEmbedded, loading })
   const gif = ex?.gif_url || ex?.gifUrl || anatomy?.gif_url || anatomy?.gifUrl;
   const img = ex?.image_url || ex?.imageUrl || anatomy?.image_url || anatomy?.imageUrl;
   const media = gif || img;
+  // Ohne Teaching-Lesson greifen wir auf die Katalogdaten der Übung selbst zurück
+  // (bei Bulk-Importen sind das die wger-Originaltexte).
+  const lessonNotes = Array.isArray(anatomy?.coaching_notes) ? anatomy.coaching_notes : [];
+  const exNotes = Array.isArray(ex?.coaching_notes) ? ex.coaching_notes : [];
+  const notes = lessonNotes.length > 0 ? lessonNotes : exNotes;
+  const notesFromCatalog = lessonNotes.length === 0 && exNotes.length > 0;
+  const fromWger = notesFromCatalog && (ex?.wger_id || (ex?.tags || []).includes("wger"));
+  const equipment = Array.isArray(ex?.equipment) ? ex.equipment : [];
 
   if (!ex && isEmbedded) {
     return (
@@ -55,6 +63,11 @@ export default function AnatDetail({ anatomy, ex, onBack, isEmbedded, loading })
             {muscleLabel(m)}
           </span>
         ))}
+        {equipment.length > 0 && (
+          <div className="w-full text-[11px] mt-1" style={{ color: 'var(--dim)' }}>
+            Equipment: {equipment.join(", ")}
+          </div>
+        )}
       </div>
 
       {loading ? (
@@ -73,14 +86,14 @@ export default function AnatDetail({ anatomy, ex, onBack, isEmbedded, loading })
                <p className="text-sm leading-relaxed text-fit-ink/80">{anatomy.trainer_explanation.client_friendly}</p>
              </div>
            )}
-           {Array.isArray(anatomy?.coaching_notes) && anatomy.coaching_notes.length > 0 && (
+           {notes.length > 0 && (
              <div className="p-4 rounded-2xl border bg-fit-card border-fit-line">
                <div className="text-[11px] font-semibold mb-2.5 flex items-center gap-1.5" style={{ color: 'var(--dim)', opacity: 0.7 }}>
                  <Star size={13} className="text-fit-accent" />
-                 Coaching-Hinweise
+                 {notesFromCatalog ? (fromWger ? "Beschreibung (wger)" : "Beschreibung") : "Coaching-Hinweise"}
                </div>
                <ul className="space-y-2.5">
-                 {anatomy.coaching_notes.map((c, i) => (
+                 {notes.map((c, i) => (
                    <li key={i} className="text-sm flex gap-2.5 text-fit-ink/80 leading-relaxed">
                      <span className="text-fit-accent font-bold mt-0.5">·</span>
                      <span>{c}</span>
@@ -107,7 +120,7 @@ export default function AnatDetail({ anatomy, ex, onBack, isEmbedded, loading })
               </div>
            )}
 
-           {!anatomy?.trainer_explanation && !anatomy?.coaching_notes && !anatomy?.muscle_anatomy && (
+           {!anatomy?.trainer_explanation && notes.length === 0 && !anatomy?.muscle_anatomy && (
              <div className="p-10 text-center rounded-2xl border border-dashed border-fit-line">
                 <p className="text-sm" style={{ color: 'var(--dim)' }}>Keine detaillierten Infos verfügbar.</p>
              </div>
