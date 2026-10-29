@@ -11,9 +11,9 @@
   },
   "scripts": {
     "dev": "vite --config vite.config.js",
-    "build": "vite build --config vite.config.js",
-    "build:firebase": "vite build --mode firebase --config vite.config.js",
-    "build:cloud": "vite build --mode firebase --config vite.config.js",
+    "build": "node scripts/ensure-kb-data.mjs && vite build --config vite.config.js",
+    "build:firebase": "node scripts/ensure-kb-data.mjs && vite build --mode firebase --config vite.config.js",
+    "build:cloud": "node scripts/ensure-kb-data.mjs && vite build --mode firebase --config vite.config.js",
     "deploy": "pnpm run build:cloud && firebase deploy --only hosting --project fitness-aos",
     "deploy:cloud": "pnpm run build:cloud && firebase deploy --only hosting --project fitness-aos",
     "preview": "vite preview --config vite.config.js",
