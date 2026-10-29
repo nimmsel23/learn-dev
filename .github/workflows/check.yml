@@ -60,9 +60,6 @@ jobs:
 
       - name: Install (Workspaces)
         run: pnpm install --frozen-lockfile
-      # fitness-app erzeugt die KB-Daten (push/pull/legs.generated.js) sonst nur im eigenen prebuild
-      - name: Fitness-KB-Daten erzeugen (von learn-app mitgenutzt)
-        run: pnpm --filter ./fitness-app run build:kb-data
 
       - name: Firebase config bereitstellen (gitignored, Platzhalter genügt zum Bauen)
         run: |
