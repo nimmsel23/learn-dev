@@ -54,7 +54,10 @@ export default function Learn({ subTab = null, onInspectExercise, muscleLanguage
   }, []);
 
   useEffect(() => {
-    if (!selected?.exercise_id) { setAnatomy({}); return; }
+    // Anatomie-Lessons gibt es nur für reviewte (expert) Übungen — alle anderen
+    // zeigen die Katalogdaten (wger/yuhonas) ohne Lesson-Abruf.
+    const reviewed = selected?.source === 'expert' || (selected?.tags || []).includes('expert');
+    if (!selected?.exercise_id || !reviewed) { setAnatomy({}); setAnatLoading(false); return; }
     setAnatLoading(true);
     getAnatomy(selected.exercise_id)
       .then(a => setAnatomy(a || {}))
@@ -102,7 +105,7 @@ export default function Learn({ subTab = null, onInspectExercise, muscleLanguage
               selected={selected}
               setSelected={(ex) => {
                  setSelected(ex);
-                 if (ex && ex.source !== 'expert') queueForEnrichment(ex)
+                 if (ex && ex.source !== 'expert') queueForEnrichment(ex) // Katalog-Daten bleiben Basis; Lesson nur für reviewte Übungen
                  if (onInspectExercise) onInspectExercise(ex);
               }}
               q={q}
