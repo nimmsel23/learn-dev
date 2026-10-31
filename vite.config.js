@@ -51,6 +51,7 @@ export default defineConfig(({ mode }) => {
         '@constants':          resolve(FITNESS_SRC, 'constants'),
         '@fitness/constants':  resolve(FITNESS_SRC, 'constants'),
         '@fitness/lib':        resolve(FITNESS_SRC, 'lib'),
+        '@fitness/styles':     resolve(FITNESS_SRC, 'styles'),
       },
     },
     server: {

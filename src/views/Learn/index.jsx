@@ -121,7 +121,7 @@ export default function Learn({ subTab = null, onInspectExercise, muscleLanguage
           </div>
 
           <div className="hidden lg:block sticky top-6 h-fit">
-            <div className="card h-full min-h-[700px] border-fit-accent/10 shadow-2xl p-8 bg-gradient-to-b from-card to-bg2 overflow-hidden relative">
+            <div className="card h-full min-h-[700px] border-fit-accent/10 shadow-2xl p-8 bg-gradient-to-b from-fit-card to-fit-bg2 overflow-hidden relative">
               <AnatDetail 
                   ex={selected} 
                   anatomy={anatomy}
@@ -154,14 +154,17 @@ export default function Learn({ subTab = null, onInspectExercise, muscleLanguage
       )}
 
       {/* Anatomy Detail Modal (Shared) */}
-      <AnatomyDetailModal 
-        muscleId={selectedMuscleId}
-        muscleData={muscleData}
-        loading={muscleLoading}
-        onClose={() => setSelectedMuscleId(null)}
-        muscleLanguage={muscleLanguage}
-        taxonomy={taxonomy}
-      />
+      {/* Nur der Explorer setzt selectedMuscleId — im Library-Modus nicht mitrendern */}
+      {viewMode === 'explorer' && (
+        <AnatomyDetailModal
+          muscleId={selectedMuscleId}
+          muscleData={muscleData}
+          loading={muscleLoading}
+          onClose={() => setSelectedMuscleId(null)}
+          muscleLanguage={muscleLanguage}
+          taxonomy={taxonomy}
+        />
+      )}
     </div>
   );
 }

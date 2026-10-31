@@ -12,7 +12,7 @@ export default function ExerciseLibrary({ exercises, selected, setSelected, q, s
 
   return (
     <div className="space-y-5">
-      <div className="px-4 py-3 rounded-2xl border bg-fit-card border-fit-line flex items-center gap-3 focus-within:border-accent transition-colors">
+      <div className="px-4 py-3 rounded-2xl border bg-fit-card border-fit-line flex items-center gap-3 focus-within:border-fit-accent transition-colors">
         <Search size={16} className="text-fit-dim" />
         <input
           value={q} onChange={e => setQ(e.target.value)}
@@ -27,9 +27,10 @@ export default function ExerciseLibrary({ exercises, selected, setSelected, q, s
           <div className="flex flex-wrap gap-1.5">
             {safeRecent.slice(0, 6).map((ex, i) => {
               const found = safeExercises.find(e => e.exercise_id === ex.exercise_id || (e.display_name || e.name) === (ex.name || ex.exercise_id));
+              const active = !!found && selected?.exercise_id === found.exercise_id;
               return (
-                <button key={i} onClick={() => found && setSelected(found)}
-                  className={`px-3 py-1.5 rounded-full border text-xs font-semibold transition-all ${selected?.exercise_id === found?.exercise_id ? 'bg-fit-accent text-black border-fit-accent' : 'bg-fit-bg2 border-fit-line text-fit-muted hover:text-ink'}`}>
+                <button key={i} disabled={!found} onClick={() => found && setSelected(found)}
+                  className={`px-3 py-1.5 rounded-full border text-xs font-semibold transition-all ${active ? 'bg-fit-accent text-black border-fit-accent' : 'bg-fit-bg2 border-fit-line text-fit-muted hover:text-fit-ink'} ${found ? '' : 'opacity-40 cursor-default'}`}>
                   {ex.name || ex.exercise_id}
                 </button>
               );
@@ -57,7 +58,7 @@ export default function ExerciseLibrary({ exercises, selected, setSelected, q, s
           ) : (
             filtered.slice(0, 80).map(ex => (
               <button key={ex.exercise_id} onClick={() => setSelected(ex)}
-                className={`w-full text-left p-3.5 rounded-2xl border transition-all flex items-center justify-between group ${selected?.exercise_id === ex.exercise_id ? 'bg-fit-accent/10 border-fit-accent/40' : 'bg-fit-card border-fit-line hover:border-accent/30'}`}>
+                className={`w-full text-left p-3.5 rounded-2xl border transition-all flex items-center justify-between group ${selected?.exercise_id === ex.exercise_id ? 'bg-fit-accent/10 border-fit-accent/40' : 'bg-fit-card border-fit-line hover:border-fit-accent/30'}`}>
                 <div className="flex items-center gap-3.5">
                   {(ex.gif_url || ex.image_url) && (
                     <div className="w-11 h-11 rounded-lg overflow-hidden border border-fit-line bg-fit-bg2 shrink-0">

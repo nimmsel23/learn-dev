@@ -76,16 +76,16 @@ export default function QuizMode({ exercises, onExit }) {
           <div className="mt-5 pt-4 border-t border-fit-line/50 space-y-3 animate-in fade-in">
             <p className="text-[12px] leading-relaxed text-fit-dim">{card.answer}</p>
             <div className="flex gap-2.5">
-              <button onClick={() => answer(false)} className="flex-1 py-2.5 rounded-xl text-sm font-semibold bg-fit-red/10 text-fit-red border border-fit-red/20 transition-all hover:bg-red/20">
+              <button onClick={() => answer(false)} className="flex-1 py-2.5 rounded-xl text-sm font-semibold bg-fit-red/10 text-fit-red border border-fit-red/20 transition-all hover:bg-fit-red/20">
                 Nochmal
               </button>
-              <button onClick={() => answer(true)} className="flex-1 py-2.5 rounded-xl text-sm font-semibold bg-fit-accent/10 text-fit-accent border border-fit-accent/20 transition-all hover:bg-accent/20">
+              <button onClick={() => answer(true)} className="flex-1 py-2.5 rounded-xl text-sm font-semibold bg-fit-accent/10 text-fit-accent border border-fit-accent/20 transition-all hover:bg-fit-accent/20">
                 Gewusst
               </button>
             </div>
           </div>
         ) : (
-          <button onClick={() => setRevealed(true)} className="mt-5 w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 bg-fit-bg2 border border-fit-line text-fit-ink hover:border-accent transition-all">
+          <button onClick={() => setRevealed(true)} className="mt-5 w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 bg-fit-bg2 border border-fit-line text-fit-ink hover:border-fit-accent transition-all">
             Antwort zeigen <ChevronRight size={14} />
           </button>
         )}
