@@ -6,7 +6,8 @@ Interaktiver Lern-Tab für Übungsbibliothek, Anatomie-Teaching, interaktive Bod
 ## Komponenten
 | Datei | Zweck |
 |-------|-------|
-| `index.jsx` | Haupt-Container: State-Management, View-Router (library / explorer / quiz), Mobile-Overlay |
+| `index.jsx` | Haupt-Container: State-Management, View-Router (library / explorer / quiz / strength), Mobile-Overlay |
+| `StrengthMatrix.jsx` | Stärke-Matrix (1RM-Rechner), Modus `strength` |
 | `ExerciseLibrary.jsx` | Suchfeld + "Zuletzt Trainiert"-Chips + scrollbare Übungsliste (max 80 Einträge) |
 | `AnatDetail.jsx` | Detail-Panel für gewählte Übung: Muskelgruppen, Erklärung, Coaching Notes, Biomechanik |
 | `ExplorerHeader.jsx` | Tab-Switcher (Übungen / Explorer / Quiz) mit konditionellem Quiz-Button |
@@ -28,7 +29,7 @@ Interaktiver Lern-Tab für Übungsbibliothek, Anatomie-Teaching, interaktive Bod
 - **State in `index.jsx`:**
   - `exercises` — alle Übungen aus Katalog
   - `selected` — aktuell gewählte Übung (Objekt)
-  - `viewMode` — `'library'` | `'explorer'` | `'quiz'`
+  - `viewMode` — `'library'` | `'explorer'` | `'quiz'` | `'strength'`
   - `q` — Suchstring
   - `recent` — Exercises aus letzter Session (für Quiz + Library-Chips)
   - `loading` — initiales Laden der Übungsliste
@@ -63,14 +64,14 @@ Interaktiver Lern-Tab für Übungsbibliothek, Anatomie-Teaching, interaktive Bod
 - **`getLatestSession()` vs `getAllExercises()`:** Werden beide parallel beim Mount gefeuert (kein await-await).
 
 ## Auffälligkeiten
-- **`'analysis'`-Mode existiert nicht**: War geplant (Muscles-Einbettung), wurde nie implementiert. ViewMode hat nur `'library'` / `'explorer'` / `'quiz'`.
-- **`muscleData`/`muscleLoading`/`selectedMuscleId`-State** wird in `index.jsx` gepflegt, aber `AnatomyDetailModal` wird immer gerendert (auch in quiz/analysis/explorer viewMode) — unnötige Hintergrundrenderings. Kein Bug, aber unklar.
+- **`'analysis'`-Mode existiert nicht**: War geplant (Muscles-Einbettung), wurde nie implementiert. ViewMode hat `'library'` / `'explorer'` / `'quiz'` / `'strength'`.
+- **`AnatomyDetailModal`** wird nur noch im `explorer`-Modus gerendert (vorher in jedem Modus).
 - **`QuizMode` bekommt `exercises={recent}`** — wenn `recent` leer ist (erste Nutzung, keine Session) zeigt QuizMode sofort "Keine Quiz-Fragen verfügbar". Kein Pre-Check vor Moduswechsel (der Quiz-Button wird zwar nur bei `hasRecent` gezeigt, aber `recent` könnte nachträglich leer sein wenn `getLatestSession()` noch läuft).
 - **`anatomy`-Initialstate ist `null`**, aber der `useEffect` setzt ihn bei fehlendem `selected` auf `{}` — `AnatDetail` bekommt also erst `null`, dann `{}`. `AnatDetail` behandelt beide gleich (kein expliziter `null`-Check, alle Felder via optional chaining).
 - **Kein Debounce auf Suchfeld** — bei jedem Keystroke wird `filtered` neu berechnet. Bei 80+ Übungen unkritisch.
-- **`ExerciseLibrary` sucht in `display_name || name`** (Zeile 7), aber "Zuletzt Trainiert"-Chips matchen über `exercise_id` oder `display_name || name` (Zeile 26) — inkonsistente Match-Logik für recent chips (könnte `found === undefined` ergeben, Button klickbar aber `setSelected(undefined)` wird nicht ausgelöst).
-- **`AnatDetail` Sektion-Label:** "Biometrische Daten" sollte "Biomechanische Daten" heißen (Code-Kommentar sagt "Biomechanical Details Section", Label sagt "Biometrische Daten" — copy-paste Fehler).
+- **"Zuletzt trainiert"-Chips** ohne Katalog-Treffer sind jetzt deaktiviert und nie als aktiv markiert (vorher: `undefined === undefined` markierte sie als gewählt).
+- Label "Biomechanische Details" in `AnatDetail.jsx` ist korrekt (Tippfehler war bereits behoben).
 - **`onInspectExercise`-Prop:** Wird in der `setSelected`-Lambda aufgerufen (`if (onInspectExercise) onInspectExercise(ex)`), aber `PlanBuilder` bekommt `onInspectExercise || setSelected` — wenn `onInspectExercise` nicht übergeben wird, nutzt `PlanBuilder` `setSelected` direkt, ohne den `queueForEnrichment`-Seiteneffekt. Potenzielle Inkonsistenz.
 
 ## Status
-Okay — gut modularisiert. `QuizMode.jsx` ist eigenständig. `PlanBuilder` ist in der Library-View unten eingebettet. Label-Tippfehler ("Biometrische" statt "Biomechanische") in `AnatDetail.jsx` noch offen.
+Okay — gut modularisiert. Styling-Fixes (Theme, Token-Namen, Alpha-Klassen, Animationen) siehe `ARCHITECTURE.md` → „Styling". Offen: `PlanBuilder` ohne `onInspectExercise` umgeht den `queueForEnrichment`-Seiteneffekt.
