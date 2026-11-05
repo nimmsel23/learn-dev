@@ -57,8 +57,10 @@ jobs:
           node-version: 22
           cache: pnpm
 
+      # nicht --frozen-lockfile: Lockfile kommt vom Meta-Repo, die package.json von
+      # learn-app weicht gewollt ab (Muster aus fitness-dev/check.yml)
       - name: Install (Workspaces)
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Firebase config bereitstellen (learn-app/firebase.config.js ist gitignored)
         run: |

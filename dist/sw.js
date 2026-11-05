@@ -1,18 +1,1 @@
-const CACHE = 'learn-vos-v1'
-const SHELL = ['/', '/index.html', '/manifest.json']
-
-self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL).catch(() => {})))
-  self.skipWaiting()
-})
-self.addEventListener('activate', e => {
-  e.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))))
-  self.clients.claim()
-})
-self.addEventListener('fetch', e => {
-  if (e.request.mode === 'navigate') {
-    e.respondWith(fetch(e.request).catch(() => caches.match('/index.html')))
-    return
-  }
-  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)))
-})
+if(!self.define){let e,i={};const n=(n,s)=>(n=new URL(n+".js",s).href,i[n]||new Promise(i=>{if("document"in self){const e=document.createElement("script");e.src=n,e.onload=i,document.head.appendChild(e)}else e=n,importScripts(n),i()}).then(()=>{let e=i[n];if(!e)throw new Error(`Module ${n} didn’t register its module`);return e}));self.define=(s,r)=>{const o=e||("document"in self?document.currentScript.src:"")||location.href;if(i[o])return;let c={};const t=e=>n(e,o),d={module:{uri:o},exports:c,require:t};i[o]=Promise.all(s.map(e=>d[e]||t(e))).then(e=>(r(...e),c))}}define(["./workbox-9c191d2f"],function(e){"use strict";self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"registerSW.js",revision:"1872c500de691dce40960bb85481de07"},{url:"index.html",revision:"888d629b9c70115c624ec33e6fc22390"},{url:"icon-512.png",revision:"e5ee236018fb8ce971d1379ec0e54e76"},{url:"icon-192.svg",revision:"e7e2d3997d45b4a26e8967f0fd28e117"},{url:"icon-192.png",revision:"df6038c8795cf29de5c592be00b449df"},{url:"icon-180.png",revision:"a68b2b46c9facc13e8b6aef4f7a39262"},{url:"favicon.svg",revision:"e7e2d3997d45b4a26e8967f0fd28e117"},{url:"assets/index-nmSSIjSW.css",revision:null},{url:"assets/index-D9XmiMkT.js",revision:null}],{}),e.cleanupOutdatedCaches(),e.registerRoute(new e.NavigationRoute(e.createHandlerBoundToURL("/index.html"),{denylist:[/^\/fitness/,/^\/exercise/,/^\/session/,/^\/coverage/,/^\/health/]}))});
