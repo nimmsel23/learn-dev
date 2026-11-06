@@ -1,0 +1,16 @@
+{
+  "repo": "learn-dev",
+  "apps": [
+    {
+      "id": "learn-vos",
+      "kind": "main",
+      "name": "learn-vos",
+      "short": "learn-vos",
+      "description": "",
+      "accent": "#888",
+      "site": "learn-vos",
+      "url": "https://learn-vos.web.app",
+      "tab": null
+    }
+  ]
+}
