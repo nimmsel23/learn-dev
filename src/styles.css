@@ -2,9 +2,8 @@
    standalone im Nordic-Theme (index.html: data-theme="nordic"). */
 @import "@fitness/styles/themes/nordic.css";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../tailwind.config.cjs";
 
 /* Strukturelle (nicht-thematische) Variablen — aus fitness-dev/src/styles.css, soweit Learn
    sie braucht (Scrim und Accent-Subtle werden von AnatomyDetailModal/PlanBuilder genutzt). */
