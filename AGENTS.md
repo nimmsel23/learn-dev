@@ -1,3 +1,7 @@
+# Entwicklungsquelle seit 2026-11-06
+
+Neue Änderungen gehören nach `~/dev/fitness-dev` (`apps/learn` und gemeinsame Quellen). Dieser Checkout ist ein Kompatibilitäts-/Release-Stand. Siehe `MIGRATED.md`.
+
 # AGENTS.md — Learn
 
 <!-- release-weg:start -->
