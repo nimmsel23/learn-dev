@@ -1,3 +1,5 @@
+# FROZEN (Owner 2026-11-07): Quelle habits→journal-dev / learn→fitness-dev.
+# Deploy bleibt nur als Freeze-Stand-Monitoring; keine Feature-Arbeit hier.
 # Standalone-Prod Learn: Push auf master deployt live (nur CI). Gleiche Schritte wie das frühere
 # Meta-Repo-Workflow deploy-learn.yml; das Meta-Repo liefert nur die Nachbar-Repos (Cross-Repo-Aliase),
 # learn-app wird auf den ausgelösten Commit gesetzt.
