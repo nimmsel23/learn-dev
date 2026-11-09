@@ -20,7 +20,12 @@
     "deploy:preview": "pnpm run build:cloud && node scripts/deploy-preview.mjs",
     "deploy:prev": "pnpm run deploy:preview",
     "build:preview": "pnpm run deploy:preview",
-    "build:prev": "pnpm run deploy:preview"
+    "build:prev": "pnpm run deploy:preview",
+    "tooling:biome": "pnpm dlx @biomejs/biome@2.6.6 check --formatter-enabled=true --linter-enabled=false --no-errors-on-unmatched scripts",
+    "tooling:knip": "pnpm dlx knip@6.44.2 --no-progress",
+    "tooling:check": "pnpm run tooling:biome && pnpm run tooling:knip",
+    "test": "node --test scripts/smoke.test.mjs",
+    "tooling:biome:lint": "pnpm dlx @biomejs/biome@2.6.6 check --formatter-enabled=true --linter-enabled=true --no-errors-on-unmatched scripts"
   },
   "dependencies": {
     "body-muscles": "^1.0.0",
@@ -43,5 +48,8 @@
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
+  },
+  "engines": {
+    "node": ">=22.13"
   }
 }

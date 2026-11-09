@@ -63,6 +63,16 @@ jobs:
       - name: Install (Workspaces)
         run: pnpm install --no-frozen-lockfile
 
+      - name: Smoke test
+        run: pnpm --filter ./learn-app test
+
+      - name: Tooling (Biome format scripts/)
+        run: pnpm --filter ./learn-app run tooling:biome
+
+      - name: Tooling (knip report)
+        continue-on-error: true
+        run: pnpm --filter ./learn-app run tooling:knip
+
       - name: Firebase config bereitstellen (gitignored, Platzhalter genügt zum Bauen)
         run: |
           if [ ! -f learn-app/firebase.config.js ]; then
