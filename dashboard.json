@@ -1,0 +1,383 @@
+{
+ "evidence": {
+  "generated_at": "2026-11-13T00:09:22+00:00",
+  "repo": "nimmsel23/learn-dev",
+  "meta": {
+   "name": "learn-dev",
+   "description": "VOS Learn PWA",
+   "html_url": "https://github.com/nimmsel23/learn-dev",
+   "pushed_at": "2026-11-13T00:08:59Z",
+   "default_branch": "master",
+   "visibility": "public",
+   "pages_url": null
+  },
+  "package": {
+   "name": "@vos/learn",
+   "version": "0.1.0"
+  },
+  "branches": {
+   "main": "master",
+   "has_dev": true,
+   "dev_behind": 1,
+   "dev_ahead": 12,
+   "oldest_unpromoted": "2026-11-07T17:39:32+01:00",
+   "dev_head": "6e039693 2026-11-13T01:08:57+01:00",
+   "master_head": "44effb52 2026-11-12T02:27:18+01:00"
+  },
+  "commits": [
+   {
+    "sha": "6e039693",
+    "date": "2026-11-13T01:08:57+01:00",
+    "author": "Alpha",
+    "subject": "feat(ci): Living Dashboard als GitHub Page"
+   },
+   {
+    "sha": "0b16af6f",
+    "date": "2026-11-12T02:19:57+01:00",
+    "author": "Alpha",
+    "subject": "ci: restore Gemini repair + Merge-Agent (full automation)"
+   },
+   {
+    "sha": "0ef63440",
+    "date": "2026-11-11T19:11:58+01:00",
+    "author": "Alpha",
+    "subject": "ci: drop Gemini repair and Merge-Agent (simplicity)"
+   },
+   {
+    "sha": "8945c377",
+    "date": "2026-11-09T22:37:07+01:00",
+    "author": "Alpha",
+    "subject": "ci: freeze Push-CI — Repo ausgelaufen (Quelle fitness-dev)"
+   },
+   {
+    "sha": "f945c427",
+    "date": "2026-11-09T22:22:24+01:00",
+    "author": "Alpha",
+    "subject": "chore(tooling): engines, Biome scripts-format, knip, smoke in Check"
+   },
+   {
+    "sha": "513974f3",
+    "date": "2026-11-09T20:19:00+01:00",
+    "author": "Alpha",
+    "subject": "fix(ci): Fitness-KB Checkout mit submodules (Yuhonas vendor)"
+   },
+   {
+    "sha": "a31c7261",
+    "date": "2026-11-09T18:49:25+01:00",
+    "author": "Alpha",
+    "subject": "fix(ci): Fitness-KB aus nimmsel23/fitness vor build:kb-data mounten"
+   },
+   {
+    "sha": "2b6630b4",
+    "date": "2026-11-09T17:19:57+01:00",
+    "author": "Alpha",
+    "subject": "chore: Pre-Push ohne vitalos; Remote-Branch vitalos obsolet"
+   },
+   {
+    "sha": "264824e6",
+    "date": "2026-11-09T17:14:58+01:00",
+    "author": "Alpha",
+    "subject": "chore: CI/AGENTS — Shell-Pin auf origin/master (kein vitalos-Vorspulen)"
+   },
+   {
+    "sha": "ed4ef368",
+    "date": "2026-11-09T17:14:25+01:00",
+    "author": "Alpha",
+    "subject": "docs(agents): Org-Taskwarrior-Konvention v1 — globale Org-Task-DB (TASKRC ~/.local/state/vitalos-org/taskrc), Rolle=Tag, Abteilung/Repo=project, UUID-Regel (Owner-Weisung 2026-11-07)"
+   },
+   {
+    "sha": "61ae8109",
+    "date": "2026-11-07T18:04:19+01:00",
+    "author": "nimmsel23",
+    "subject": "fix(ci): handle deploy workflows and safe no-op repairs"
+   },
+   {
+    "sha": "0c817818",
+    "date": "2026-11-07T17:39:32+01:00",
+    "author": "nimmsel23",
+    "subject": "feat(ci): add Gemini CI repair agent"
+   },
+   {
+    "sha": "e5b867fa",
+    "date": "2026-11-07T10:43:37+01:00",
+    "author": "Alpha",
+    "subject": "ci(dependabot): Eingefroren — keine Updates mehr auf ausgelaufenem Repo (Pflege in fitness-dev)"
+   },
+   {
+    "sha": "aedfd490",
+    "date": "2026-11-07T10:38:42+01:00",
+    "author": "dependabot[bot]",
+    "subject": "build(deps-dev): bump postcss from 8.5.16 to 8.5.23 (#13)"
+   },
+   {
+    "sha": "8b0819d1",
+    "date": "2026-11-07T10:30:33+01:00",
+    "author": "dependabot[bot]",
+    "subject": "build(deps): bump brace-expansion from 2.1.1 to 2.1.7 (#11)"
+   },
+   {
+    "sha": "ff08bbf9",
+    "date": "2026-11-07T09:15:57+01:00",
+    "author": "Alpha",
+    "subject": "ci(automerge-pr): Majors-Sperre — Major-Bumps im Titel nicht automatisch squaschen (CEO-Vorgabe)"
+   },
+   {
+    "sha": "b031ca73",
+    "date": "2026-11-07T09:11:12+01:00",
+    "author": "Alpha",
+    "subject": "ci(learn): Dependabot-PRs bei grünem Check automatisch squashen (PR-AutoMerge)"
+   },
+   {
+    "sha": "bdbfec82",
+    "date": "2026-11-06T13:32:20+01:00",
+    "author": "Alpha",
+    "subject": "docs: move Learn development ownership to Fitness"
+   },
+   {
+    "sha": "7e1870c6",
+    "date": "2026-11-06T12:00:38Z",
+    "author": "github-actions[bot]",
+    "subject": "Merge pull request #12 from nimmsel23/dev"
+   },
+   {
+    "sha": "488a3bd0",
+    "date": "2026-11-06T12:58:59+01:00",
+    "author": "Alpha",
+    "subject": "deps(css): Tailwind 3.4 -> 4.3 migrieren (analog fitness #69)"
+   }
+  ],
+  "activity": [
+   {
+    "day": "2026-10-24",
+    "n": 0
+   },
+   {
+    "day": "2026-10-25",
+    "n": 0
+   },
+   {
+    "day": "2026-10-26",
+    "n": 0
+   },
+   {
+    "day": "2026-10-27",
+    "n": 0
+   },
+   {
+    "day": "2026-10-28",
+    "n": 2
+   },
+   {
+    "day": "2026-10-29",
+    "n": 9
+   },
+   {
+    "day": "2026-10-30",
+    "n": 0
+   },
+   {
+    "day": "2026-10-31",
+    "n": 4
+   },
+   {
+    "day": "2026-11-01",
+    "n": 0
+   },
+   {
+    "day": "2026-11-02",
+    "n": 0
+   },
+   {
+    "day": "2026-11-03",
+    "n": 0
+   },
+   {
+    "day": "2026-11-04",
+    "n": 0
+   },
+   {
+    "day": "2026-11-05",
+    "n": 4
+   },
+   {
+    "day": "2026-11-06",
+    "n": 5
+   },
+   {
+    "day": "2026-11-07",
+    "n": 7
+   },
+   {
+    "day": "2026-11-08",
+    "n": 0
+   },
+   {
+    "day": "2026-11-09",
+    "n": 7
+   },
+   {
+    "day": "2026-11-10",
+    "n": 0
+   },
+   {
+    "day": "2026-11-11",
+    "n": 1
+   },
+   {
+    "day": "2026-11-12",
+    "n": 1
+   },
+   {
+    "day": "2026-11-13",
+    "n": 1
+   }
+  ],
+  "workflows": [
+   {
+    "name": "PR-AutoMerge (Dependabot -> dev)",
+    "branch": "master",
+    "event": "schedule",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-12T22:50:40Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/43323615578",
+    "sha": "44effb5"
+   },
+   {
+    "name": "Live Deploy (Learn master)",
+    "branch": "master",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-12T01:27:23Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/43134623169",
+    "sha": "44effb5"
+   },
+   {
+    "name": "Auto-Merge (grüner Check Learn)",
+    "branch": "master",
+    "event": "workflow_run",
+    "status": "completed",
+    "conclusion": "skipped",
+    "created_at": "2026-11-09T21:23:41Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42702076119",
+    "sha": "e5b867f"
+   },
+   {
+    "name": "Check (Learn)",
+    "branch": "dev",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-09T21:22:29Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42701889910",
+    "sha": "f945c42"
+   },
+   {
+    "name": "Preview (Learn dev)",
+    "branch": "dev",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-09T21:22:29Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42701889787",
+    "sha": "f945c42"
+   },
+   {
+    "name": "Check (Learn)",
+    "branch": "dependabot/npm_and_yarn/postcss-8.5.23",
+    "event": "pull_request",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-07T09:32:04Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42360137146",
+    "sha": "4dc8e51"
+   },
+   {
+    "name": "Preview (Learn dev)",
+    "branch": "dependabot/npm_and_yarn/postcss-8.5.23",
+    "event": "pull_request",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-07T09:32:04Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42360137137",
+    "sha": "4dc8e51"
+   },
+   {
+    "name": "Preview (Learn dev)",
+    "branch": "dependabot/npm_and_yarn/brace-expansion-2.1.7",
+    "event": "pull_request",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-06T12:03:39Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42214780992",
+    "sha": "4b70d80"
+   },
+   {
+    "name": "Check (Learn)",
+    "branch": "dependabot/npm_and_yarn/brace-expansion-2.1.7",
+    "event": "pull_request",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-06T12:03:39Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42214780884",
+    "sha": "4b70d80"
+   }
+  ],
+  "issues": [],
+  "pulls": [],
+  "live_sites": [
+   "https://learn-vos.web.app"
+  ]
+ },
+ "assessment": {
+  "status": "red",
+  "signals": [
+   {
+    "level": "red",
+    "key": "ci:Live Deploy (Learn master):master",
+    "text": "„Live Deploy (Learn master)“ auf master ist rot (failure, 44effb5)",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/43134623169"
+   },
+   {
+    "level": "red",
+    "key": "diverged",
+    "text": "dev und master sind auseinandergelaufen (12 vor, 1 hinter) — Auto-Promote kann nicht vorspulen"
+   }
+  ],
+  "ai": {
+   "headline": "Master-Deploy fehlerhaft, dev/master divergieren stark",
+   "lage": "Der Workflow „Live Deploy (Learn master)“ auf dem master-Branch ist mit Commit 44effb5 fehlgeschlagen. Die Branches dev und master sind um 12 Commits voraus und 1 Commit hinterher divergiert, was eine automatische Promotion verhindert. Der älteste unpromotete Commit ist 0c817818 vom 2026-11-07.",
+   "auffaelligkeiten": [
+    {
+     "level": "hoch",
+     "text": "Der Workflow „Live Deploy (Learn master)“ auf master ist rot (failure, 44effb5) (Run 43134623169)."
+    },
+    {
+     "level": "hoch",
+     "text": "Die Branches dev und master sind auseinandergelaufen (12 vor, 1 hinter), was die Auto-Promotion blockiert."
+    },
+    {
+     "level": "info",
+     "text": "Der älteste unpromotete Commit 0c817818 ('feat(ci): add Gemini CI repair agent') ist vom 2026-11-07."
+    },
+    {
+     "level": "info",
+     "text": "Die Dokumentation NEXT.md weist auf die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN für den CI-Agenten hin."
+    }
+   ],
+   "naechste_schritte": [
+    "Analysiere den Fehler im Workflow „Live Deploy (Learn master)“ (Run 43134623169) für Commit 44effb5.",
+    "Untersuche die Ursache der Divergenz zwischen dev und master (12 vor, 1 hinter) und die Blockade der Auto-Promotion.",
+    "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md."
+   ],
+   "veraendert": "",
+   "fragen": [
+    "Soll die Divergenz zwischen dev und master manuell aufgelöst werden, um die Auto-Promotion zu reaktivieren?",
+    "Ist der aktuelle Fehler im „Live Deploy (Learn master)“-Workflow (44effb5) ein erwartetes Ergebnis im Rahmen der CI-Agent-Tests (siehe NEXT.md)?"
+   ],
+   "model": "gemini-2.5-flash"
+  },
+  "ai_at": "2026-11-13T00:09:25+00:00"
+ }
+}
