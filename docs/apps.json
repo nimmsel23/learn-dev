@@ -10,7 +10,10 @@
       "accent": "#888",
       "site": "learn-vos",
       "url": "https://learn-vos.web.app",
-      "tab": null
+      "tab": null,
+      "bundledAuthDomain": "fitness-aos.firebaseapp.com"
     }
-  ]
+  ],
+  "pages": "https://nimmsel23.github.io/learn-dev/",
+  "bundledAuthDomain": "fitness-aos.firebaseapp.com"
 }
