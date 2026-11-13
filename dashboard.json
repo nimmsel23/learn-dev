@@ -1,15 +1,15 @@
 {
  "evidence": {
-  "generated_at": "2026-11-13T00:09:22+00:00",
+  "generated_at": "2026-11-13T00:11:44+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-13T00:08:59Z",
+   "pushed_at": "2026-11-13T00:11:25Z",
    "default_branch": "master",
    "visibility": "public",
-   "pages_url": null
+   "pages_url": "https://nimmsel23.github.io/learn-dev/"
   },
   "package": {
    "name": "@vos/learn",
@@ -19,12 +19,18 @@
    "main": "master",
    "has_dev": true,
    "dev_behind": 1,
-   "dev_ahead": 12,
+   "dev_ahead": 13,
    "oldest_unpromoted": "2026-11-07T17:39:32+01:00",
-   "dev_head": "6e039693 2026-11-13T01:08:57+01:00",
+   "dev_head": "d6f6e57f 2026-11-13T01:11:23+01:00",
    "master_head": "44effb52 2026-11-12T02:27:18+01:00"
   },
   "commits": [
+   {
+    "sha": "d6f6e57f",
+    "date": "2026-11-13T01:11:23+01:00",
+    "author": "Alpha",
+    "subject": "chore(portal): portal.mjs + docs/apps.* aus vitalos vos-portal --all synchronisiert"
+   },
    {
     "sha": "6e039693",
     "date": "2026-11-13T01:08:57+01:00",
@@ -138,12 +144,6 @@
     "date": "2026-11-06T12:00:38Z",
     "author": "github-actions[bot]",
     "subject": "Merge pull request #12 from nimmsel23/dev"
-   },
-   {
-    "sha": "488a3bd0",
-    "date": "2026-11-06T12:58:59+01:00",
-    "author": "Alpha",
-    "subject": "deps(css): Tailwind 3.4 -> 4.3 migrieren (analog fitness #69)"
    }
   ],
   "activity": [
@@ -229,7 +229,7 @@
    },
    {
     "day": "2026-11-13",
-    "n": 1
+    "n": 2
    }
   ],
   "workflows": [
@@ -324,7 +324,19 @@
     "sha": "4b70d80"
    }
   ],
-  "issues": [],
+  "issues": [
+   {
+    "number": 14,
+    "title": "Dashboard-Lage: rot",
+    "created_at": "2026-11-13T00:09:39Z",
+    "updated_at": "2026-11-13T00:09:39Z",
+    "labels": [
+     "dashboard"
+    ],
+    "url": "https://github.com/nimmsel23/learn-dev/issues/14",
+    "author": "github-actions[bot]"
+   }
+  ],
   "pulls": [],
   "live_sites": [
    "https://learn-vos.web.app"
@@ -342,42 +354,42 @@
    {
     "level": "red",
     "key": "diverged",
-    "text": "dev und master sind auseinandergelaufen (12 vor, 1 hinter) — Auto-Promote kann nicht vorspulen"
+    "text": "dev und master sind auseinandergelaufen (13 vor, 1 hinter) — Auto-Promote kann nicht vorspulen"
    }
   ],
   "ai": {
-   "headline": "Master-Deploy fehlerhaft, dev/master divergieren stark",
-   "lage": "Der Workflow „Live Deploy (Learn master)“ auf dem master-Branch ist mit Commit 44effb5 fehlgeschlagen. Die Branches dev und master sind um 12 Commits voraus und 1 Commit hinterher divergiert, was eine automatische Promotion verhindert. Der älteste unpromotete Commit ist 0c817818 vom 2026-11-07.",
+   "headline": "Master-Deploy fehlerhaft, dev/master divergieren weiter",
+   "lage": "Der Workflow „Live Deploy (Learn master)“ auf dem master-Branch ist mit Commit 44effb5 fehlgeschlagen. Die Branches dev und master sind um 13 Commits voraus und 1 Commit hinterher divergiert, was eine automatische Promotion verhindert. Der älteste unpromotete Commit ist 0c817818 vom 2026-11-07.",
    "auffaelligkeiten": [
     {
      "level": "hoch",
-     "text": "Der Workflow „Live Deploy (Learn master)“ auf master ist rot (failure, 44effb5) (Run 43134623169)."
+     "text": "„Live Deploy (Learn master)“ auf master ist rot (failure, 44effb5, Run 43134623169)."
     },
     {
      "level": "hoch",
-     "text": "Die Branches dev und master sind auseinandergelaufen (12 vor, 1 hinter), was die Auto-Promotion blockiert."
+     "text": "dev und master sind um 13 Commits voraus und 1 Commit hinterher auseinandergelaufen, Auto-Promote ist blockiert."
     },
     {
      "level": "info",
-     "text": "Der älteste unpromotete Commit 0c817818 ('feat(ci): add Gemini CI repair agent') ist vom 2026-11-07."
+     "text": "Issue #14 „Dashboard-Lage: rot“ wurde durch github-actions[bot] erstellt."
     },
     {
      "level": "info",
-     "text": "Die Dokumentation NEXT.md weist auf die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN für den CI-Agenten hin."
+     "text": "Der dev-Branch enthält neue Commits, darunter „feat(ci): Living Dashboard als GitHub Page“ (6e039693)."
     }
    ],
    "naechste_schritte": [
     "Analysiere den Fehler im Workflow „Live Deploy (Learn master)“ (Run 43134623169) für Commit 44effb5.",
-    "Untersuche die Ursache der Divergenz zwischen dev und master (12 vor, 1 hinter) und die Blockade der Auto-Promotion.",
+    "Untersuche die Ursache der Divergenz zwischen dev und master (13 vor, 1 hinter) und die Blockade der Auto-Promotion.",
     "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md."
    ],
-   "veraendert": "",
+   "veraendert": "Die Divergenz zwischen dev und master hat sich von 12 auf 13 Commits voraus erhöht, und ein neues Issue #14 zur roten Dashboard-Lage wurde erstellt.",
    "fragen": [
-    "Soll die Divergenz zwischen dev und master manuell aufgelöst werden, um die Auto-Promotion zu reaktivieren?",
-    "Ist der aktuelle Fehler im „Live Deploy (Learn master)“-Workflow (44effb5) ein erwartetes Ergebnis im Rahmen der CI-Agent-Tests (siehe NEXT.md)?"
+    "Soll die Auto-Promotion wiederhergestellt werden, und wenn ja, welche Strategie ist für die Behebung der Divergenz zu verfolgen?",
+    "Sollen die in NEXT.md genannten Secrets GEMINI_API_KEY und SYNC_TOKEN eingerichtet oder geprüft werden, um die CI-Agenten zu aktivieren?"
    ],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-13T00:09:25+00:00"
+  "ai_at": "2026-11-13T00:11:46+00:00"
  }
 }
