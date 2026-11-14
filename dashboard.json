@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-14T22:21:27+00:00",
+  "generated_at": "2026-11-14T22:30:11+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-14T22:21:03Z",
+   "pushed_at": "2026-11-14T22:29:51Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -20,11 +20,17 @@
    "has_dev": true,
    "dev_behind": 0,
    "dev_ahead": 1,
-   "oldest_unpromoted": "2026-11-14T23:21:01+01:00",
-   "dev_head": "1c10d38d 2026-11-14T23:21:01+01:00",
-   "master_head": "55945452 2026-11-14T23:12:51+01:00"
+   "oldest_unpromoted": "2026-11-14T23:29:45+01:00",
+   "dev_head": "27a23e18 2026-11-14T23:29:45+01:00",
+   "master_head": "1c10d38d 2026-11-14T23:21:01+01:00"
   },
   "commits": [
+   {
+    "sha": "27a23e18",
+    "date": "2026-11-14T23:29:45+01:00",
+    "author": "Alpha",
+    "subject": "chore(portal): Registry nach Release aktualisiert (vos-portal)"
+   },
    {
     "sha": "1c10d38d",
     "date": "2026-11-14T23:21:01+01:00",
@@ -138,12 +144,6 @@
     "date": "2026-11-07T10:30:33+01:00",
     "author": "dependabot[bot]",
     "subject": "build(deps): bump brace-expansion from 2.1.1 to 2.1.7 (#11)"
-   },
-   {
-    "sha": "ff08bbf9",
-    "date": "2026-11-07T09:15:57+01:00",
-    "author": "Alpha",
-    "subject": "ci(automerge-pr): Majors-Sperre — Major-Bumps im Titel nicht automatisch squaschen (CEO-Vorgabe)"
    }
   ],
   "activity": [
@@ -229,7 +229,7 @@
    },
    {
     "day": "2026-11-14",
-    "n": 2
+    "n": 3
    }
   ],
   "workflows": [
@@ -238,10 +238,10 @@
     "branch": "master",
     "event": "push",
     "status": "completed",
-    "conclusion": "failure",
-    "created_at": "2026-11-14T22:12:56Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/43646904104",
-    "sha": "5594545"
+    "conclusion": "success",
+    "created_at": "2026-11-14T22:21:34Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/43647672591",
+    "sha": "1c10d38"
    },
    {
     "name": "PR-AutoMerge (Dependabot -> dev)",
@@ -309,7 +309,7 @@
     "number": 14,
     "title": "Dashboard-Lage: rot",
     "created_at": "2026-11-13T00:09:39Z",
-    "updated_at": "2026-11-14T22:13:32Z",
+    "updated_at": "2026-11-14T22:21:43Z",
     "labels": [
      "dashboard"
     ],
@@ -323,41 +323,30 @@
   ]
  },
  "assessment": {
-  "status": "red",
-  "signals": [
-   {
-    "level": "red",
-    "key": "ci:Live Deploy (Learn master):master",
-    "text": "„Live Deploy (Learn master)“ auf master ist rot (failure, 5594545)",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/43646904104"
-   }
-  ],
+  "status": "green",
+  "signals": [],
   "ai": {
-   "headline": "Live Deploy (Learn master) fehlerhaft; potenzieller Fix auf dev verfügbar",
-   "lage": "Der Workflow „Live Deploy (Learn master)“ ist auf dem master-Branch mit Commit 55945452 fehlgeschlagen (Run 43646904104). Der dev-Branch ist nun einen Commit (1c10d38d) vor master und enthält einen Commit, der einen Submodule-Fehler im Live-Deploy adressiert. Issue 14 „Dashboard-Lage: rot“ ist weiterhin offen.",
+   "headline": "Live Deploy auf Master erfolgreich; Issue 14 offen; dev ist voraus",
+   "lage": "Der Workflow „Live Deploy (Learn master)“ ist auf dem master-Branch mit Commit 1c10d38d (Run 43647672591) erfolgreich abgeschlossen. Der dev-Branch ist nun einen Commit (27a23e18) vor master. Issue 14 „Dashboard-Lage: rot“ ist weiterhin offen und wurde zuletzt aktualisiert.",
    "auffaelligkeiten": [
     {
      "level": "hoch",
-     "text": "Der Workflow „Live Deploy (Learn master)“ auf master ist mit Commit 55945452 fehlgeschlagen (Run 43646904104)."
+     "text": "Issue 14 „Dashboard-Lage: rot“ ist weiterhin offen, obwohl der Live Deploy auf master erfolgreich war (Run 43647672591)."
     },
     {
      "level": "info",
-     "text": "Der dev-Branch ist einen Commit (1c10d38d) vor master und enthält einen Commit, der einen Submodule-Fehler im Live-Deploy adressiert."
-    },
-    {
-     "level": "info",
-     "text": "Issue 14 „Dashboard-Lage: rot“ ist weiterhin offen und wurde kürzlich aktualisiert."
+     "text": "Der dev-Branch ist mit Commit 27a23e18 (Registry-Aktualisierung) einen Commit vor master."
     }
    ],
    "naechste_schritte": [
-    "Merge den dev-Branch (Commit 1c10d38d) in den master-Branch.",
-    "Starte den Workflow „Live Deploy (Learn master)“ auf master erneut.",
+    "Überprüfe den aktuellen Status des Dashboards, da Issue 14 noch offen ist.",
+    "Merge den dev-Branch (Commit 27a23e18) in den master-Branch.",
     "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md."
    ],
-   "veraendert": "Der dev-Branch ist nun einen Commit (1c10d38d) vor master und enthält einen potenziellen Fix für den fehlgeschlagenen Live-Deploy, während die Branches zuvor synchronisiert waren.",
+   "veraendert": "Der Workflow „Live Deploy (Learn master)“, der zuvor fehlerhaft war, wurde auf dem master-Branch mit Commit 1c10d38d erfolgreich abgeschlossen.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-14T22:21:28+00:00"
+  "ai_at": "2026-11-14T22:30:13+00:00"
  }
 }
