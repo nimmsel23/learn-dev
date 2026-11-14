@@ -44,7 +44,7 @@ jobs:
         run: |
           git config --global url."https://x-access-token:${{ github.token }}@github.com/".insteadOf "git@github.com:"
           git submodule sync
-          git submodule update --init --recursive
+          git submodule update --init  # nicht --recursive: journal-app pinnt private aos-* Repos, die der Token nicht sieht
 
       - name: learn-dev auf den geprüften Commit setzen
         run: |

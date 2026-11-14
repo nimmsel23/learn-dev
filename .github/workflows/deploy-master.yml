@@ -32,7 +32,7 @@ jobs:
       run: |
         git config --global url."https://x-access-token:${{ secrets.GH_SUBMODULE_TOKEN || secrets.GITHUB_TOKEN }}@github.com/".insteadOf "git@github.com:"
         git submodule sync
-        git submodule update --init --recursive
+        git submodule update --init  # nicht --recursive: journal-app pinnt private aos-* Repos, die der Token nicht sieht
     - name: learn-app auf den ausgelösten Commit setzen
       run: |
         cd learn-app
