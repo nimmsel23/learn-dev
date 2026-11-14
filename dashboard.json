@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-14T22:13:17+00:00",
+  "generated_at": "2026-11-14T22:21:27+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-14T22:12:54Z",
+   "pushed_at": "2026-11-14T22:21:03Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -19,12 +19,18 @@
    "main": "master",
    "has_dev": true,
    "dev_behind": 0,
-   "dev_ahead": 0,
-   "oldest_unpromoted": null,
-   "dev_head": "55945452 2026-11-14T23:12:51+01:00",
+   "dev_ahead": 1,
+   "oldest_unpromoted": "2026-11-14T23:21:01+01:00",
+   "dev_head": "1c10d38d 2026-11-14T23:21:01+01:00",
    "master_head": "55945452 2026-11-14T23:12:51+01:00"
   },
   "commits": [
+   {
+    "sha": "1c10d38d",
+    "date": "2026-11-14T23:21:01+01:00",
+    "author": "Alpha",
+    "subject": "ci: Submodule ohne --recursive (private aos-* in journal-app brachen den Live-Deploy)"
+   },
    {
     "sha": "55945452",
     "date": "2026-11-14T23:12:51+01:00",
@@ -138,12 +144,6 @@
     "date": "2026-11-07T09:15:57+01:00",
     "author": "Alpha",
     "subject": "ci(automerge-pr): Majors-Sperre — Major-Bumps im Titel nicht automatisch squaschen (CEO-Vorgabe)"
-   },
-   {
-    "sha": "b031ca73",
-    "date": "2026-11-07T09:11:12+01:00",
-    "author": "Alpha",
-    "subject": "ci(learn): Dependabot-PRs bei grünem Check automatisch squashen (PR-AutoMerge)"
    }
   ],
   "activity": [
@@ -229,7 +229,7 @@
    },
    {
     "day": "2026-11-14",
-    "n": 1
+    "n": 2
    }
   ],
   "workflows": [
@@ -309,7 +309,7 @@
     "number": 14,
     "title": "Dashboard-Lage: rot",
     "created_at": "2026-11-13T00:09:39Z",
-    "updated_at": "2026-11-13T00:12:09Z",
+    "updated_at": "2026-11-14T22:13:32Z",
     "labels": [
      "dashboard"
     ],
@@ -333,8 +333,8 @@
    }
   ],
   "ai": {
-   "headline": "Live Deploy (Learn master) fehlerhaft auf 55945452, Branches synchronisiert",
-   "lage": "Der Workflow „Live Deploy (Learn master)“ ist auf dem master-Branch mit Commit 55945452 fehlgeschlagen. Die Branches dev und master sind nun synchronisiert, was die vorherige Divergenz auflöst. Issue 14 „Dashboard-Lage: rot“ deutet auf ein anhaltendes Problem hin.",
+   "headline": "Live Deploy (Learn master) fehlerhaft; potenzieller Fix auf dev verfügbar",
+   "lage": "Der Workflow „Live Deploy (Learn master)“ ist auf dem master-Branch mit Commit 55945452 fehlgeschlagen (Run 43646904104). Der dev-Branch ist nun einen Commit (1c10d38d) vor master und enthält einen Commit, der einen Submodule-Fehler im Live-Deploy adressiert. Issue 14 „Dashboard-Lage: rot“ ist weiterhin offen.",
    "auffaelligkeiten": [
     {
      "level": "hoch",
@@ -342,22 +342,22 @@
     },
     {
      "level": "info",
-     "text": "Die Branches dev und master sind nun synchronisiert (Head 55945452), die vorherige Divergenz ist behoben."
+     "text": "Der dev-Branch ist einen Commit (1c10d38d) vor master und enthält einen Commit, der einen Submodule-Fehler im Live-Deploy adressiert."
     },
     {
      "level": "info",
-     "text": "Issue 14 „Dashboard-Lage: rot“ wurde vom GitHub-Actions-Bot erstellt und ist weiterhin offen."
+     "text": "Issue 14 „Dashboard-Lage: rot“ ist weiterhin offen und wurde kürzlich aktualisiert."
     }
    ],
    "naechste_schritte": [
-    "Analysiere den Fehler im Workflow „Live Deploy (Learn master)“ (Run 43646904104) für Commit 55945452.",
-    "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md.",
-    "Untersuche, ob Issue 14 „Dashboard-Lage: rot“ direkt mit dem fehlgeschlagenen Deploy zusammenhängt."
+    "Merge den dev-Branch (Commit 1c10d38d) in den master-Branch.",
+    "Starte den Workflow „Live Deploy (Learn master)“ auf master erneut.",
+    "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md."
    ],
-   "veraendert": "Gegenüber der letzten Einschätzung sind die Branches dev und master nun synchronisiert, und der älteste unpromotete Commit ist nicht mehr vorhanden.",
+   "veraendert": "Der dev-Branch ist nun einen Commit (1c10d38d) vor master und enthält einen potenziellen Fix für den fehlgeschlagenen Live-Deploy, während die Branches zuvor synchronisiert waren.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-14T22:13:19+00:00"
+  "ai_at": "2026-11-14T22:21:28+00:00"
  }
 }
