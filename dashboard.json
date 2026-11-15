@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-14T22:30:11+00:00",
+  "generated_at": "2026-11-15T12:13:04+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-14T22:29:51Z",
+   "pushed_at": "2026-11-14T22:30:27Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -148,10 +148,6 @@
   ],
   "activity": [
    {
-    "day": "2026-10-25",
-    "n": 0
-   },
-   {
     "day": "2026-10-26",
     "n": 0
    },
@@ -230,6 +226,10 @@
    {
     "day": "2026-11-14",
     "n": 3
+   },
+   {
+    "day": "2026-11-15",
+    "n": 0
    }
   ],
   "workflows": [
@@ -304,19 +304,7 @@
     "sha": "4dc8e51"
    }
   ],
-  "issues": [
-   {
-    "number": 14,
-    "title": "Dashboard-Lage: rot",
-    "created_at": "2026-11-13T00:09:39Z",
-    "updated_at": "2026-11-14T22:21:43Z",
-    "labels": [
-     "dashboard"
-    ],
-    "url": "https://github.com/nimmsel23/learn-dev/issues/14",
-    "author": "github-actions[bot]"
-   }
-  ],
+  "issues": [],
   "pulls": [],
   "live_sites": [
    "https://learn-vos.web.app"
@@ -326,27 +314,23 @@
   "status": "green",
   "signals": [],
   "ai": {
-   "headline": "Live Deploy auf Master erfolgreich; Issue 14 offen; dev ist voraus",
-   "lage": "Der Workflow „Live Deploy (Learn master)“ ist auf dem master-Branch mit Commit 1c10d38d (Run 43647672591) erfolgreich abgeschlossen. Der dev-Branch ist nun einen Commit (27a23e18) vor master. Issue 14 „Dashboard-Lage: rot“ ist weiterhin offen und wurde zuletzt aktualisiert.",
+   "headline": "Live Deploy erfolgreich; dev ist voraus; Issue 14 geschlossen",
+   "lage": "Der Workflow „Live Deploy (Learn master)“ ist auf dem master-Branch mit Commit 1c10d38d (Run 43647672591) erfolgreich abgeschlossen. Der dev-Branch ist weiterhin einen Commit (27a23e18) vor master. Issue 14 ist nicht mehr in den offenen Issues gelistet.",
    "auffaelligkeiten": [
     {
-     "level": "hoch",
-     "text": "Issue 14 „Dashboard-Lage: rot“ ist weiterhin offen, obwohl der Live Deploy auf master erfolgreich war (Run 43647672591)."
-    },
-    {
      "level": "info",
-     "text": "Der dev-Branch ist mit Commit 27a23e18 (Registry-Aktualisierung) einen Commit vor master."
+     "text": "Der Workflow „Preview (Learn dev)“ für den Branch „dependabot/npm_and_yarn/postcss-8.5.23“ ist mit „failure“ abgeschlossen (Run 42360137137)."
     }
    ],
    "naechste_schritte": [
-    "Überprüfe den aktuellen Status des Dashboards, da Issue 14 noch offen ist.",
     "Merge den dev-Branch (Commit 27a23e18) in den master-Branch.",
-    "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md."
+    "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md.",
+    "Analysiere den fehlgeschlagenen Workflow 'Preview (Learn dev)' für den Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137)."
    ],
-   "veraendert": "Der Workflow „Live Deploy (Learn master)“, der zuvor fehlerhaft war, wurde auf dem master-Branch mit Commit 1c10d38d erfolgreich abgeschlossen.",
+   "veraendert": "Gegenüber der letzten Einschätzung ist Issue 14 nicht mehr in den offenen Issues gelistet.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-14T22:30:13+00:00"
+  "ai_at": "2026-11-15T12:13:06+00:00"
  }
 }
