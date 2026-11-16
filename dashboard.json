@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-16T11:36:09+00:00",
+  "generated_at": "2026-11-16T13:07:05+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-16T11:35:45Z",
+   "pushed_at": "2026-11-16T11:36:28Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -316,31 +316,38 @@
    {
     "level": "yellow",
     "key": "promote",
-    "text": "4 Commit(s) auf dev seit 1.5 Tagen nicht auf master promotet"
+    "text": "4 Commit(s) auf dev seit 1.6 Tagen nicht auf master promotet"
    }
   ],
   "ai": {
    "headline": "Dev-Branch 4 Commits voraus; Promote-Regel aktiv; Dependabot-Fehler ungelöst",
-   "lage": "Der dev-Branch ist 4 Commits vor dem master-Branch; der älteste unpromotete Commit ist 27a23e18 vom 14. November. Der master-Branch wurde zuletzt mit Commit 1c10d38d am 14. November aktualisiert, was durch den Workflow „Live Deploy (Learn master)“ erfolgreich abgeschlossen wurde. Der Workflow „Preview (Learn dev)“ für den Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137) ist weiterhin fehlgeschlagen.",
+   "lage": "Der dev-Branch ist 4 Commits vor dem master-Branch, mit dem ältesten unpromoteten Commit 27a23e18 vom 14. November. Der master-Branch wurde zuletzt mit Commit 1c10d38d am 14. November erfolgreich aktualisiert. Der Workflow „Preview (Learn dev)“ für den Dependabot-Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137) ist weiterhin fehlgeschlagen.",
    "auffaelligkeiten": [
     {
      "level": "hoch",
-     "text": "Der dev-Branch ist 4 Commits vor master; der älteste unpromotete Commit 27a23e18 ist seit über 1.5 Tagen nicht auf master promotet worden (Regel-Signal 'promote')."
+     "text": "Regel-Signal 'promote' ist aktiv: 4 Commits auf dev seit 1.6 Tagen nicht auf master promotet."
     },
     {
      "level": "mittel",
-     "text": "Der Workflow 'Preview (Learn dev)' für den Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137) ist weiterhin fehlgeschlagen."
+     "text": "Der Workflow „Preview (Learn dev)“ für den Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137) ist seit dem 7. November fehlgeschlagen und ungelöst."
+    },
+    {
+     "level": "info",
+     "text": "Drei neue Commits (c20a736f, afaddb1a, acf23475) wurden am 16. November auf dev gepusht, alle von 'Cursor Agent' und betreffen das Dashboard."
     }
    ],
    "naechste_schritte": [
     "Merge den dev-Branch (Commit c20a736f) in den master-Branch.",
     "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md.",
-    "Analysiere den fehlgeschlagenen Workflow 'Preview (Learn dev)' für den Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137)."
+    "Analysiere den fehlgeschlagenen Workflow 'Preview (Learn dev)' für Run 42360137137."
    ],
-   "veraendert": "Der dev-Branch ist nun 4 Commits vor master, angeführt von c20a736f, statt nur einem Commit wie in der letzten Einschätzung.",
-   "fragen": [],
+   "veraendert": "Gegenüber der letzten Einschätzung wurden drei neue Commits von 'Cursor Agent' auf den dev-Branch gepusht, die den Vorsprung von 4 Commits aufrechterhalten.",
+   "fragen": [
+    "Soll der fehlgeschlagene Dependabot-Workflow 'Preview (Learn dev)' (Run 42360137137) behoben oder ignoriert werden?",
+    "Ist die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md noch aktuell und notwendig?"
+   ],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-16T11:36:12+00:00"
+  "ai_at": "2026-11-16T13:07:09+00:00"
  }
 }
