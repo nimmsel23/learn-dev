@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-15T12:13:04+00:00",
+  "generated_at": "2026-11-16T11:36:09+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-14T22:30:27Z",
+   "pushed_at": "2026-11-16T11:35:45Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -19,12 +19,30 @@
    "main": "master",
    "has_dev": true,
    "dev_behind": 0,
-   "dev_ahead": 1,
+   "dev_ahead": 4,
    "oldest_unpromoted": "2026-11-14T23:29:45+01:00",
-   "dev_head": "27a23e18 2026-11-14T23:29:45+01:00",
+   "dev_head": "c20a736f 2026-11-16T11:35:44Z",
    "master_head": "1c10d38d 2026-11-14T23:21:01+01:00"
   },
   "commits": [
+   {
+    "sha": "c20a736f",
+    "date": "2026-11-16T11:35:44Z",
+    "author": "Cursor Agent",
+    "subject": "dashboard: Check und Dashboard starten"
+   },
+   {
+    "sha": "afaddb1a",
+    "date": "2026-11-16T11:33:32Z",
+    "author": "Cursor Agent",
+    "subject": "dashboard: Check und Dashboard auf dev starten"
+   },
+   {
+    "sha": "acf23475",
+    "date": "2026-11-16T11:26:43Z",
+    "author": "Cursor Agent",
+    "subject": "dashboard: master-Push baut ebenfalls dev"
+   },
    {
     "sha": "27a23e18",
     "date": "2026-11-14T23:29:45+01:00",
@@ -126,31 +144,9 @@
     "date": "2026-11-07T17:39:32+01:00",
     "author": "nimmsel23",
     "subject": "feat(ci): add Gemini CI repair agent"
-   },
-   {
-    "sha": "e5b867fa",
-    "date": "2026-11-07T10:43:37+01:00",
-    "author": "Alpha",
-    "subject": "ci(dependabot): Eingefroren — keine Updates mehr auf ausgelaufenem Repo (Pflege in fitness-dev)"
-   },
-   {
-    "sha": "aedfd490",
-    "date": "2026-11-07T10:38:42+01:00",
-    "author": "dependabot[bot]",
-    "subject": "build(deps-dev): bump postcss from 8.5.16 to 8.5.23 (#13)"
-   },
-   {
-    "sha": "8b0819d1",
-    "date": "2026-11-07T10:30:33+01:00",
-    "author": "dependabot[bot]",
-    "subject": "build(deps): bump brace-expansion from 2.1.1 to 2.1.7 (#11)"
    }
   ],
   "activity": [
-   {
-    "day": "2026-10-26",
-    "n": 0
-   },
    {
     "day": "2026-10-27",
     "n": 0
@@ -230,6 +226,10 @@
    {
     "day": "2026-11-15",
     "n": 0
+   },
+   {
+    "day": "2026-11-16",
+    "n": 3
    }
   ],
   "workflows": [
@@ -311,26 +311,36 @@
   ]
  },
  "assessment": {
-  "status": "green",
-  "signals": [],
+  "status": "yellow",
+  "signals": [
+   {
+    "level": "yellow",
+    "key": "promote",
+    "text": "4 Commit(s) auf dev seit 1.5 Tagen nicht auf master promotet"
+   }
+  ],
   "ai": {
-   "headline": "Live Deploy erfolgreich; dev ist voraus; Issue 14 geschlossen",
-   "lage": "Der Workflow „Live Deploy (Learn master)“ ist auf dem master-Branch mit Commit 1c10d38d (Run 43647672591) erfolgreich abgeschlossen. Der dev-Branch ist weiterhin einen Commit (27a23e18) vor master. Issue 14 ist nicht mehr in den offenen Issues gelistet.",
+   "headline": "Dev-Branch 4 Commits voraus; Promote-Regel aktiv; Dependabot-Fehler ungelöst",
+   "lage": "Der dev-Branch ist 4 Commits vor dem master-Branch; der älteste unpromotete Commit ist 27a23e18 vom 14. November. Der master-Branch wurde zuletzt mit Commit 1c10d38d am 14. November aktualisiert, was durch den Workflow „Live Deploy (Learn master)“ erfolgreich abgeschlossen wurde. Der Workflow „Preview (Learn dev)“ für den Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137) ist weiterhin fehlgeschlagen.",
    "auffaelligkeiten": [
     {
-     "level": "info",
-     "text": "Der Workflow „Preview (Learn dev)“ für den Branch „dependabot/npm_and_yarn/postcss-8.5.23“ ist mit „failure“ abgeschlossen (Run 42360137137)."
+     "level": "hoch",
+     "text": "Der dev-Branch ist 4 Commits vor master; der älteste unpromotete Commit 27a23e18 ist seit über 1.5 Tagen nicht auf master promotet worden (Regel-Signal 'promote')."
+    },
+    {
+     "level": "mittel",
+     "text": "Der Workflow 'Preview (Learn dev)' für den Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137) ist weiterhin fehlgeschlagen."
     }
    ],
    "naechste_schritte": [
-    "Merge den dev-Branch (Commit 27a23e18) in den master-Branch.",
+    "Merge den dev-Branch (Commit c20a736f) in den master-Branch.",
     "Prüfe die Einrichtung von GEMINI_API_KEY und SYNC_TOKEN als Actions-Secrets gemäß NEXT.md.",
     "Analysiere den fehlgeschlagenen Workflow 'Preview (Learn dev)' für den Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137)."
    ],
-   "veraendert": "Gegenüber der letzten Einschätzung ist Issue 14 nicht mehr in den offenen Issues gelistet.",
+   "veraendert": "Der dev-Branch ist nun 4 Commits vor master, angeführt von c20a736f, statt nur einem Commit wie in der letzten Einschätzung.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-15T12:13:06+00:00"
+  "ai_at": "2026-11-16T11:36:12+00:00"
  }
 }
