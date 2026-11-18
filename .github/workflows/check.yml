@@ -86,5 +86,27 @@ jobs:
             cp firebase.config.js learn-app/firebase.config.js
           fi
 
+      # Wie deploy-master.yml: ohne Katalog bricht ensure-kb-data ab
+      # (push.generated.js ist gitignored und kommt aus der Fitness-KB).
+      - name: Checkout fitness KB (SOT)
+        uses: actions/checkout@v4
+        with:
+          repository: nimmsel23/fitness
+          ref: main
+          path: fitness-kb
+          submodules: recursive
+
+      - name: KB in fitness-app einhängen
+        run: |
+          set -euo pipefail
+          mkdir -p fitness-app/fitness/catalog
+          rm -rf fitness-app/fitness/catalog/kb
+          ln -sfn "$GITHUB_WORKSPACE/fitness-kb" fitness-app/fitness/catalog/kb
+          test -d fitness-app/fitness/catalog/kb/exercises/6pack
+          echo "KB @ $(git -C fitness-kb rev-parse --short HEAD)"
+
+      - name: Fitness-KB-Daten erzeugen (von learn-app mitgenutzt)
+        run: pnpm --filter ./fitness-app run build:kb-data
+
       - name: Build Learn
         run: pnpm --filter ./learn-app run build:firebase
