@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-18T07:54:52+00:00",
+  "generated_at": "2026-11-18T07:57:33+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-18T07:54:33Z",
+   "pushed_at": "2026-11-18T07:57:11Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -19,12 +19,18 @@
    "main": "master",
    "has_dev": true,
    "dev_behind": 0,
-   "dev_ahead": 7,
+   "dev_ahead": 8,
    "oldest_unpromoted": "2026-11-14T23:29:45+01:00",
-   "dev_head": "ca1c6289 2026-11-18T07:54:32Z",
+   "dev_head": "909103b1 2026-11-18T07:57:10Z",
    "master_head": "d7d2c68b 2026-11-17T17:06:41+01:00"
   },
   "commits": [
+   {
+    "sha": "909103b1",
+    "date": "2026-11-18T07:57:10Z",
+    "author": "Cursor Agent",
+    "subject": "ci: Check hängt die Fitness-KB ein wie der Live-Deploy"
+   },
    {
     "sha": "ca1c6289",
     "date": "2026-11-18T07:54:32Z",
@@ -138,12 +144,6 @@
     "date": "2026-11-09T18:49:25+01:00",
     "author": "Alpha",
     "subject": "fix(ci): Fitness-KB aus nimmsel23/fitness vor build:kb-data mounten"
-   },
-   {
-    "sha": "2b6630b4",
-    "date": "2026-11-09T17:19:57+01:00",
-    "author": "Alpha",
-    "subject": "chore: Pre-Push ohne vitalos; Remote-Branch vitalos obsolet"
    }
   ],
   "activity": [
@@ -229,7 +229,7 @@
    },
    {
     "day": "2026-11-18",
-    "n": 3
+    "n": 4
    }
   ],
   "workflows": [
@@ -239,9 +239,9 @@
     "event": "push",
     "status": "in_progress",
     "conclusion": null,
-    "created_at": "2026-11-18T07:54:35Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262551030",
-    "sha": "ca1c628"
+    "created_at": "2026-11-18T07:57:13Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262889664",
+    "sha": "909103b"
    },
    {
     "name": "Check (Learn)",
@@ -249,9 +249,9 @@
     "event": "push",
     "status": "in_progress",
     "conclusion": null,
-    "created_at": "2026-11-18T07:54:35Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262550972",
-    "sha": "ca1c628"
+    "created_at": "2026-11-18T07:57:13Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262889573",
+    "sha": "909103b"
    },
    {
     "name": "Live Deploy (Learn master)",
@@ -302,16 +302,6 @@
     "created_at": "2026-11-07T09:32:04Z",
     "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42360137146",
     "sha": "4dc8e51"
-   },
-   {
-    "name": "Preview (Learn dev)",
-    "branch": "dependabot/npm_and_yarn/postcss-8.5.23",
-    "event": "pull_request",
-    "status": "completed",
-    "conclusion": "failure",
-    "created_at": "2026-11-07T09:32:04Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42360137137",
-    "sha": "4dc8e51"
    }
   ],
   "issues": [],
@@ -326,35 +316,30 @@
    {
     "level": "yellow",
     "key": "promote",
-    "text": "7 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet"
+    "text": "8 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet"
    }
   ],
   "ai": {
-   "headline": "Dev-Branch 7 Commits voraus; CI für `ca1c6289` läuft; Promote-Regel aktiv",
-   "lage": "Der dev-Branch ist 7 Commits vor dem master-Branch. Der älteste unpromotete Commit ist `27a23e18` vom 14. November. Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den aktuellen dev-Head `ca1c6289` sind in Bearbeitung.",
+   "headline": "Dev-Branch 8 Commits voraus; CI für `909103b1` läuft; Promote-Regel aktiv",
+   "lage": "Der dev-Branch ist 8 Commits vor dem master-Branch. Der älteste unpromotete Commit `27a23e18` stammt vom 14. November. Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den aktuellen dev-Head `909103b1` sind in Bearbeitung.",
    "auffaelligkeiten": [
     {
      "level": "hoch",
-     "text": "7 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet (Regel-Signal 'promote')."
-    },
-    {
-     "level": "mittel",
-     "text": "Workflow \"Preview (Learn dev)\" (Run `42360137137`) für einen Dependabot-Branch ist fehlgeschlagen."
+     "text": "8 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet (Regel-Signal 'promote' aktiv)."
     },
     {
      "level": "info",
-     "text": "Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den aktuellen dev-Head `ca1c6289` sind in Bearbeitung."
+     "text": "Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den dev-Head `909103b1` laufen."
     }
    ],
    "naechste_schritte": [
-    "Warte auf den Abschluss der Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für Commit `ca1c6289` auf `dev`.",
-    "Prüfe die Konfiguration der Actions-Secrets `GEMINI_API_KEY` und `SYNC_TOKEN` gemäß `NEXT.md`, falls die `dev`-Workflows fehlschlagen.",
-    "Untersuche den fehlgeschlagenen Workflow \"Preview (Learn dev)\" (Run `42360137137`) für den Dependabot-Branch."
+    "Warte auf den Abschluss der Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für Commit `909103b1` auf `dev`.",
+    "Prüfe die Konfiguration der Actions-Secrets `GEMINI_API_KEY` und `SYNC_TOKEN` gemäß `NEXT.md`, falls die `dev`-Workflows fehlschlagen."
    ],
-   "veraendert": "Der dev-Branch ist nun 7 Commits voraus (zuvor 6), mit einem neuen Head `ca1c6289`, dessen CI-Workflows in Bearbeitung sind.",
+   "veraendert": "Der dev-Branch ist nun 8 Commits vor master, statt 7, und die CI-Läufe beziehen sich auf den neuen Head `909103b1`.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-18T07:54:55+00:00"
+  "ai_at": "2026-11-18T07:57:34+00:00"
  }
 }
