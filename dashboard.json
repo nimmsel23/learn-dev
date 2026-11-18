@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-18T07:57:33+00:00",
+  "generated_at": "2026-11-18T13:23:36+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-18T07:57:11Z",
+   "pushed_at": "2026-11-18T07:58:23Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -19,10 +19,10 @@
    "main": "master",
    "has_dev": true,
    "dev_behind": 0,
-   "dev_ahead": 8,
-   "oldest_unpromoted": "2026-11-14T23:29:45+01:00",
+   "dev_ahead": 0,
+   "oldest_unpromoted": null,
    "dev_head": "909103b1 2026-11-18T07:57:10Z",
-   "master_head": "d7d2c68b 2026-11-17T17:06:41+01:00"
+   "master_head": "909103b1 2026-11-18T07:57:10Z"
   },
   "commits": [
    {
@@ -149,7 +149,7 @@
   "activity": [
    {
     "day": "2026-10-29",
-    "n": 9
+    "n": 2
    },
    {
     "day": "2026-10-30",
@@ -234,11 +234,21 @@
   ],
   "workflows": [
    {
+    "name": "Live Deploy (Learn master)",
+    "branch": "master",
+    "event": "workflow_dispatch",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-18T07:58:25Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44263044915",
+    "sha": "909103b"
+   },
+   {
     "name": "Auto-Merge (grüner Check Learn)",
     "branch": "dev",
     "event": "push",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "created_at": "2026-11-18T07:57:13Z",
     "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262889664",
     "sha": "909103b"
@@ -247,21 +257,11 @@
     "name": "Check (Learn)",
     "branch": "dev",
     "event": "push",
-    "status": "in_progress",
-    "conclusion": null,
+    "status": "completed",
+    "conclusion": "success",
     "created_at": "2026-11-18T07:57:13Z",
     "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262889573",
     "sha": "909103b"
-   },
-   {
-    "name": "Live Deploy (Learn master)",
-    "branch": "master",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-17T16:06:44Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44121995383",
-    "sha": "d7d2c68"
    },
    {
     "name": "PR-AutoMerge (Dependabot -> dev)",
@@ -292,16 +292,6 @@
     "created_at": "2026-11-09T21:22:29Z",
     "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42701889787",
     "sha": "f945c42"
-   },
-   {
-    "name": "Check (Learn)",
-    "branch": "dependabot/npm_and_yarn/postcss-8.5.23",
-    "event": "pull_request",
-    "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-07T09:32:04Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42360137146",
-    "sha": "4dc8e51"
    }
   ],
   "issues": [],
@@ -311,35 +301,24 @@
   ]
  },
  "assessment": {
-  "status": "yellow",
-  "signals": [
-   {
-    "level": "yellow",
-    "key": "promote",
-    "text": "8 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet"
-   }
-  ],
+  "status": "green",
+  "signals": [],
   "ai": {
-   "headline": "Dev-Branch 8 Commits voraus; CI für `909103b1` läuft; Promote-Regel aktiv",
-   "lage": "Der dev-Branch ist 8 Commits vor dem master-Branch. Der älteste unpromotete Commit `27a23e18` stammt vom 14. November. Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den aktuellen dev-Head `909103b1` sind in Bearbeitung.",
+   "headline": "Dev- und Master-Branch synchronisiert; CI für `909103b1` erfolgreich",
+   "lage": "Der dev-Branch ist mit dem master-Branch auf Commit `909103b1` synchronisiert. Alle Workflows für diesen Commit auf `dev` (\"Check (Learn)\", \"Auto-Merge (grüner Check Learn)\") und `master` (\"Live Deploy (Learn master)\") wurden erfolgreich abgeschlossen. Es sind keine unpromoteten Commits mehr vorhanden.",
    "auffaelligkeiten": [
     {
-     "level": "hoch",
-     "text": "8 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet (Regel-Signal 'promote' aktiv)."
-    },
-    {
      "level": "info",
-     "text": "Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den dev-Head `909103b1` laufen."
+     "text": "Die `NEXT.md` listet `GEMINI_API_KEY` und `SYNC_TOKEN` weiterhin als offene Betriebspunkte, obwohl die jüngsten CI-Läufe erfolgreich waren."
     }
    ],
    "naechste_schritte": [
-    "Warte auf den Abschluss der Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für Commit `909103b1` auf `dev`.",
-    "Prüfe die Konfiguration der Actions-Secrets `GEMINI_API_KEY` und `SYNC_TOKEN` gemäß `NEXT.md`, falls die `dev`-Workflows fehlschlagen."
+    "Prüfe die `NEXT.md`-Anweisung zu `GEMINI_API_KEY` und `SYNC_TOKEN` auf Aktualisierungsbedarf."
    ],
-   "veraendert": "Der dev-Branch ist nun 8 Commits vor master, statt 7, und die CI-Läufe beziehen sich auf den neuen Head `909103b1`.",
+   "veraendert": "Der dev-Branch ist nun mit dem master-Branch synchronisiert, und alle zuvor ausstehenden Workflows für Commit `909103b1` wurden erfolgreich abgeschlossen.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-18T07:57:34+00:00"
+  "ai_at": "2026-11-18T13:23:38+00:00"
  }
 }
