@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-18T07:46:28+00:00",
+  "generated_at": "2026-11-18T07:51:35+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-18T07:46:04Z",
+   "pushed_at": "2026-11-18T07:51:15Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -19,12 +19,18 @@
    "main": "master",
    "has_dev": true,
    "dev_behind": 0,
-   "dev_ahead": 5,
+   "dev_ahead": 6,
    "oldest_unpromoted": "2026-11-14T23:29:45+01:00",
-   "dev_head": "59f9ba6d 2026-11-18T07:45:57Z",
+   "dev_head": "71ff0135 2026-11-18T07:51:14Z",
    "master_head": "d7d2c68b 2026-11-17T17:06:41+01:00"
   },
   "commits": [
+   {
+    "sha": "71ff0135",
+    "date": "2026-11-18T07:51:14Z",
+    "author": "Cursor Agent",
+    "subject": "ci: Promote dev→master nach grünem Check wieder an"
+   },
    {
     "sha": "59f9ba6d",
     "date": "2026-11-18T07:45:57Z",
@@ -138,12 +144,6 @@
     "date": "2026-11-09T17:14:58+01:00",
     "author": "Alpha",
     "subject": "chore: CI/AGENTS — Shell-Pin auf origin/master (kein vitalos-Vorspulen)"
-   },
-   {
-    "sha": "ed4ef368",
-    "date": "2026-11-09T17:14:25+01:00",
-    "author": "Alpha",
-    "subject": "docs(agents): Org-Taskwarrior-Konvention v1 — globale Org-Task-DB (TASKRC ~/.local/state/vitalos-org/taskrc), Rolle=Tag, Abteilung/Repo=project, UUID-Regel (Owner-Weisung 2026-11-07)"
    }
   ],
   "activity": [
@@ -229,10 +229,30 @@
    },
    {
     "day": "2026-11-18",
-    "n": 1
+    "n": 2
    }
   ],
   "workflows": [
+   {
+    "name": "Check (Learn)",
+    "branch": "dev",
+    "event": "push",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-18T07:51:17Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262123071",
+    "sha": "71ff013"
+   },
+   {
+    "name": "Auto-Merge (grüner Check Learn)",
+    "branch": "dev",
+    "event": "push",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-18T07:51:17Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262123036",
+    "sha": "71ff013"
+   },
    {
     "name": "Live Deploy (Learn master)",
     "branch": "master",
@@ -262,16 +282,6 @@
     "created_at": "2026-11-09T21:23:41Z",
     "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42702076119",
     "sha": "e5b867f"
-   },
-   {
-    "name": "Check (Learn)",
-    "branch": "dev",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-09T21:22:29Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42701889910",
-    "sha": "f945c42"
    },
    {
     "name": "Preview (Learn dev)",
@@ -316,38 +326,35 @@
    {
     "level": "yellow",
     "key": "promote",
-    "text": "5 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet"
+    "text": "6 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet"
    }
   ],
   "ai": {
-   "headline": "Dev-Branch 5 Commits voraus; Promote-Regel aktiv; Dependabot-Fehler ungelöst",
-   "lage": "Der dev-Branch ist 5 Commits vor dem master-Branch, mit dem ältesten unpromoteten Commit 27a23e18 vom 14. November. Der Workflow „Preview (Learn dev)“ für den Dependabot-Branch 'dependabot/npm_and_yarn/postcss-8.5.23' (Run 42360137137) ist weiterhin fehlgeschlagen.",
+   "headline": "Dev-Branch 6 Commits voraus; CI für `71ff0135` läuft; Promote-Regel aktiv",
+   "lage": "Der dev-Branch ist 6 Commits vor dem master-Branch, mit dem ältesten unpromoteten Commit `27a23e18` vom 14. November. Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den aktuellen dev-Head `71ff0135` sind derzeit in Bearbeitung.",
    "auffaelligkeiten": [
     {
      "level": "hoch",
-     "text": "5 Commit(s) auf dev seit 3.4 Tagen nicht auf master promotet, ältestes Commit 27a23e18."
+     "text": "Die Promote-Regel ist aktiv, da 6 Commits auf dev seit 3.4 Tagen nicht auf master promotet wurden."
     },
     {
      "level": "mittel",
-     "text": "Der Workflow „Preview (Learn dev)“ (Run 42360137137) für den Dependabot-Branch 'dependabot/npm_and_yarn/postcss-8.5.23' ist weiterhin fehlgeschlagen."
+     "text": "Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den dev-Head `71ff0135` sind in Bearbeitung und blockieren die Promotion."
     },
     {
      "level": "info",
-     "text": "Die Dokumentation in NEXT.md weist auf die Notwendigkeit hin, die Actions-Secrets `GEMINI_API_KEY` und `SYNC_TOKEN` einzurichten/zu prüfen."
+     "text": "Der Workflow \"Preview (Learn dev)\" (Run `42360137137`) für den Dependabot-Branch 'dependabot/npm_and_yarn/postcss-8.5.23' ist weiterhin fehlgeschlagen."
     }
    ],
    "naechste_schritte": [
-    "Analysiere den fehlgeschlagenen Workflow 'Preview (Learn dev)' (Run 42360137137).",
-    "Prüfe die Konfiguration der Actions-Secrets `GEMINI_API_KEY` und `SYNC_TOKEN` gemäß `NEXT.md`.",
-    "Merge den dev-Branch (Commit 59f9ba6d) in den master-Branch, sobald die CI-Prüfungen erfolgreich sind."
+    "Warte auf den Abschluss der Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für Commit `71ff0135` auf `dev`.",
+    "Prüfe die Konfiguration der Actions-Secrets `GEMINI_API_KEY` und `SYNC_TOKEN` gemäß `NEXT.md`, falls die `dev`-Workflows fehlschlagen.",
+    "Untersuche den fehlgeschlagenen Workflow \"Preview (Learn dev)\" (Run `42360137137`) für den Dependabot-Branch."
    ],
-   "veraendert": "Der dev-Branch ist nun 5 Commits vor master, gegenüber 4 Commits in der letzten Einschätzung.",
-   "fragen": [
-    "Soll der Dependabot-Branch 'dependabot/npm_and_yarn/postcss-8.5.23' trotz des fehlgeschlagenen Workflows 'Preview (Learn dev)' (Run 42360137137) manuell geprüft und gemergt werden?",
-    "Soll der Promote-Prozess für die 5 Commits auf dev beschleunigt werden, um die Promote-Regel zu deaktivieren?"
-   ],
+   "veraendert": "Der dev-Branch ist nun 6 Commits vor master, und die neuesten Workflows für den dev-Head `71ff0135` sind in Bearbeitung.",
+   "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-18T07:46:30+00:00"
+  "ai_at": "2026-11-18T07:51:37+00:00"
  }
 }
