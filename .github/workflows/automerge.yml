@@ -1,47 +1,165 @@
-# FROZEN (Owner 2026-11-07): Pflege an der Quelle
-#   habits → journal-dev (apps/habits)
-#   learn  → fitness-dev
-# Dieses Repo ist kein aktives Dev-Ziel mehr. Push-CI aus; nur workflow_dispatch.
-# Auto-Merge bei grünem Check (Muster aus fitness-dev, dort die Referenz):
-#   - Release-PR dev -> master (vos-release-pr): Merge-Commit (kein Squash, sonst driftet dev),
-#     Kein Deploy hier: die Live-Veröffentlichung läuft über den Pointer-Bump im Meta-Repo
-#     master (siehe ~/vitalos/docs/DEPLOYMENT.md).
-# Rot bleibt liegen. Läuft als workflow_run im Kontext des Default-Branch und checkt nie
-# PR-Code aus. Wirkt deshalb erst, wenn diese Datei im Default-Branch des Repos liegt.
+# Promote dev -> master (CTO 18.11.2026).
+# Der Freeze vom 09.11. hat workflow_run entfernt. Der Job hing weiter an
+# workflow_run + pull_request, deshalb war workflow_dispatch ein Leerlauf.
+# Einen Schedule gab es hier nie.
+# Push auf dev startet diese Datei in der Version von dev. Das ist nötig, solange
+# sie auf master noch die Freeze-Fassung ist: workflow_run liest nur den Default-Branch.
+# Danach zieht ein grüner Check master per Fast-Forward oder Merge-Commit nach.
+# Ein Push mit GITHUB_TOKEN startet keinen Live-Deploy, deshalb Dispatch.
+# Rot bleibt liegen. Kein Squash, kein Rebase, kein Force-Push.
 
 name: Auto-Merge (grüner Check Learn)
 
 on:
+  workflow_run:
+    workflows: ["Check (Learn)"]
+    types: [completed]
+  push:
+    branches: [dev]
   workflow_dispatch:
     inputs:
       reason:
-        description: 'Nur manuell — Repo ist eingefroren'
+        description: 'Optionaler Grund'
         required: false
-        default: 'frozen'
+        default: ''
+
 permissions:
   contents: write
   pull-requests: write
   actions: write
 
+concurrency:
+  group: auto-promote-learn
+  cancel-in-progress: false
+
 jobs:
   merge:
     if: >-
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'pull_request' &&
-      github.event.workflow_run.head_branch == 'dev'
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'push' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'dev' &&
+       (github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'pull_request'))
     runs-on: ubuntu-latest
+    timeout-minutes: 35
     env:
       GH_TOKEN: ${{ github.token }}
       REPO: ${{ github.repository }}
-      BRANCH: ${{ github.event.workflow_run.head_branch }}
-      SHA: ${{ github.event.workflow_run.head_sha }}
+      SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
     steps:
-      - name: Mergen, wenn der grüne Lauf dem aktuellen PR-Stand entspricht
+      - name: master auf dev nachziehen, wenn der Check grün ist
         run: |
-          pr=$(gh pr list -R "$REPO" --head "$BRANCH" --base master --state open --json number,headRefOid \
-            --jq ".[] | select(.headRefOid == \"$SHA\") | .number")
-          [ -n "$pr" ] || { echo "Kein offener PR mit Stand $SHA (veraltet oder schon gemergt)."; exit 0; }
-          gh pr merge "$pr" -R "$REPO" --merge
-          # Merge mit GITHUB_TOKEN löst keinen Push-Trigger aus -> Live-Deploy per Dispatch
+          set -euo pipefail
+
+          ref_sha() {
+            gh api "repos/$REPO/git/ref/heads/$1" --jq .object.sha
+          }
+
+          dev_sha="$(ref_sha dev)"
+          master_sha="$(ref_sha master)"
+          if [ "${GITHUB_EVENT_NAME}" = "workflow_run" ]; then
+            dev_sha="$SHA"
+            current="$(ref_sha dev)"
+            if [ "$dev_sha" != "$current" ]; then
+              echo "Check gehört zu $dev_sha, dev steht auf $current."
+              exit 0
+            fi
+          fi
+
+          if [ "$dev_sha" = "$master_sha" ]; then
+            echo "dev == master ($dev_sha)."
+            exit 0
+          fi
+
+          cmp="$(gh api "repos/$REPO/compare/${master_sha}...${dev_sha}" --jq .status)"
+          echo "master...dev = $cmp"
+          echo "dev=$dev_sha"
+          echo "master=$master_sha"
+          case "$cmp" in
+            identical) exit 0 ;;
+            behind)
+              echo "dev liegt hinter master. Kein Promote."
+              exit 0
+              ;;
+            diverged)
+              echo "::error::dev und master haben eigene Commits. Zuerst origin/master nach dev mergen."
+              exit 1
+              ;;
+            ahead) ;;
+            *)
+              echo "::error::Vergleichsstatus $cmp."
+              exit 1
+              ;;
+          esac
+
+          ok=0
+          for i in $(seq 1 50); do
+            runs="$(gh run list -R "$REPO" --workflow check.yml --commit "$dev_sha" --limit 20 \
+              --json event,status,conclusion,databaseId)"
+            echo "Check Versuch $i: $(printf '%s' "$runs" | jq -c '[.[] | {event,status,conclusion,databaseId}]')"
+            if printf '%s' "$runs" | jq -e \
+              '[.[] | select((.event=="push" or .event=="pull_request") and .status=="completed" and .conclusion=="success")] | length > 0' \
+              >/dev/null; then
+              ok=1
+              break
+            fi
+            pending="$(printf '%s' "$runs" | jq '[.[] | select(.event=="push" or .event=="pull_request") | select(.status!="completed")] | length')"
+            failed="$(printf '%s' "$runs" | jq '[.[] | select((.event=="push" or .event=="pull_request") and .status=="completed" and (.conclusion=="failure" or .conclusion=="cancelled" or .conclusion=="timed_out"))] | length')"
+            if [ "$pending" = "0" ] && [ "$failed" != "0" ]; then
+              echo "Check auf $dev_sha ist rot. Kein Promote."
+              exit 0
+            fi
+            sleep 30
+          done
+          if [ "$ok" != 1 ]; then
+            echo "::error::Kein grüner push- oder pull_request-Check auf $dev_sha."
+            exit 1
+          fi
+
+          dev_sha="$(ref_sha dev)"
+          master_sha="$(ref_sha master)"
+          if [ "$dev_sha" = "$master_sha" ]; then
+            echo "dev == master ($dev_sha)."
+            exit 0
+          fi
+          cmp="$(gh api "repos/$REPO/compare/${master_sha}...${dev_sha}" --jq .status)"
+          if [ "$cmp" != "ahead" ]; then
+            echo "::error::Nach dem Check ist master...dev = $cmp. Kein Fast-Forward."
+            exit 1
+          fi
+
+          new_master="$dev_sha"
+          if gh api --method PATCH "repos/$REPO/git/refs/heads/master" -f sha="$dev_sha" -F force=false >/tmp/ff.json 2>/tmp/ff.err; then
+            echo "master per Fast-Forward auf $dev_sha."
+          else
+            echo "Fast-Forward abgelehnt. Merge-Commit über PR."
+            cat /tmp/ff.err >&2 || true
+            pr="$(gh pr list -R "$REPO" --head dev --base master --state open --json number,headRefOid \
+              --jq ".[] | select(.headRefOid==\"$dev_sha\") | .number")"
+            if [ -z "$pr" ]; then
+              gh pr create -R "$REPO" --base master --head dev \
+                --title "promote: dev nach master" \
+                --body "Auto-Promote. Der Check auf dev ist grün. Merge-Commit, kein Squash." || true
+              pr="$(gh pr list -R "$REPO" --head dev --base master --state open --json number,headRefOid \
+                --jq ".[] | select(.headRefOid==\"$dev_sha\") | .number")"
+            fi
+            [ -n "$pr" ] || { echo "::error::Promote-PR fehlt."; exit 1; }
+            merged_ok=0
+            for i in 1 2 3 4 5 6; do
+              if gh pr merge "$pr" -R "$REPO" --merge; then
+                merged_ok=1
+                break
+              fi
+              echo "Merge von PR #$pr noch nicht durch (Versuch $i)."
+              sleep 10
+            done
+            [ "$merged_ok" = 1 ] || { echo "::error::Merge von PR #$pr fehlgeschlagen."; exit 1; }
+            new_master="$(ref_sha master)"
+            if [ "$new_master" != "$dev_sha" ]; then
+              gh api --method PATCH "repos/$REPO/git/refs/heads/dev" -f sha="$new_master" -F force=false
+              echo "dev auf $new_master nachgezogen."
+            fi
+          fi
+
           gh workflow run deploy-master.yml -R "$REPO" --ref master
-          echo "Gemergt. Live-Deploy per Dispatch gestartet."
+          echo "Live-Deploy per Dispatch für $new_master gestartet."
