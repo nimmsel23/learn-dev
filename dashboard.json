@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-19T13:49:52+00:00",
+  "generated_at": "2026-11-20T13:32:22+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-18T13:23:53Z",
+   "pushed_at": "2026-11-19T13:50:05Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -148,12 +148,8 @@
   ],
   "activity": [
    {
-    "day": "2026-10-30",
-    "n": 0
-   },
-   {
     "day": "2026-10-31",
-    "n": 4
+    "n": 0
    },
    {
     "day": "2026-11-01",
@@ -230,6 +226,10 @@
    {
     "day": "2026-11-19",
     "n": 0
+   },
+   {
+    "day": "2026-11-20",
+    "n": 0
    }
   ],
   "workflows": [
@@ -304,16 +304,22 @@
   "status": "green",
   "signals": [],
   "ai": {
-   "headline": "Dev- und Master-Branch synchronisiert; CI für `909103b1` erfolgreich",
-   "lage": "Der dev-Branch ist mit dem master-Branch auf Commit `909103b1` synchronisiert. Alle Workflows für diesen Commit auf `dev` (\"Check (Learn)\", \"Auto-Merge (grüner Check Learn)\") und `master` (\"Live Deploy (Learn master)\") wurden erfolgreich abgeschlossen. Es sind keine unpromoted Commits mehr vorhanden.",
-   "auffaelligkeiten": [],
-   "naechste_schritte": [
-    "Prüfe die `NEXT.md`-Anweisung zu `GEMINI_API_KEY` und `SYNC_TOKEN` auf Aktualisierungsbedarf."
+   "headline": "Dev- und Master-Branch synchronisiert; CI für `909103b1` weiterhin erfolgreich",
+   "lage": "Der dev-Branch ist mit dem master-Branch auf Commit `909103b1` synchronisiert. Alle Workflows für diesen Commit auf `dev` (\"Check (Learn)\", \"Auto-Merge (grüner Check Learn)\") und `master` (\"Live Deploy (Learn master)\") wurden erfolgreich abgeschlossen. Es sind keine unpromoted Commits vorhanden.",
+   "auffaelligkeiten": [
+    {
+     "level": "info",
+     "text": "Der Punkt in `NEXT.md` bezüglich `GEMINI_API_KEY` und `SYNC_TOKEN` ist weiterhin offen."
+    }
    ],
-   "veraendert": "",
+   "naechste_schritte": [
+    "Prüfe die `NEXT.md`-Anweisung zu `GEMINI_API_KEY` und `SYNC_TOKEN`.",
+    "Überprüfe die Erreichbarkeit und Funktion der Live-Seite https://learn-vos.web.app."
+   ],
+   "veraendert": "Die Lage ist stabil und unverändert gegenüber der letzten Einschätzung.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-19T13:49:55+00:00"
+  "ai_at": "2026-11-20T13:32:24+00:00"
  }
 }
