@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-23T18:03:55+00:00",
+  "generated_at": "2026-11-23T18:12:40+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-23T15:20:09Z",
+   "pushed_at": "2026-11-23T18:11:54Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -19,10 +19,14 @@
    "main": "master",
    "has_dev": true,
    "dev_behind": 0,
-   "dev_ahead": 0,
-   "oldest_unpromoted": null,
-   "dev_head": "909103b1 2026-11-18T07:57:10Z",
+   "dev_ahead": 1,
+   "oldest_unpromoted": "2026-11-23T19:11:53+01:00",
+   "dev_head": "7e21b454 2026-11-23T19:11:53+01:00",
    "master_head": "909103b1 2026-11-18T07:57:10Z"
+  },
+  "work": {
+   "branch": "master",
+   "sha": "909103b156e58e29ef3a42751896f40105fefbb1"
   },
   "commits": [
    {
@@ -234,6 +238,26 @@
   ],
   "workflows": [
    {
+    "name": "Check (Learn)",
+    "branch": "dev",
+    "event": "push",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-23T18:11:56Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45235790019",
+    "sha": "7e21b45"
+   },
+   {
+    "name": "Auto-Merge (grüner Check Learn)",
+    "branch": "dev",
+    "event": "push",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-11-23T18:11:56Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45235790015",
+    "sha": "7e21b45"
+   },
+   {
     "name": "Live Deploy (Learn master)",
     "branch": "master",
     "event": "workflow_dispatch",
@@ -241,26 +265,6 @@
     "conclusion": "success",
     "created_at": "2026-11-18T07:58:25Z",
     "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44263044915",
-    "sha": "909103b"
-   },
-   {
-    "name": "Auto-Merge (grüner Check Learn)",
-    "branch": "dev",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-18T07:57:13Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262889664",
-    "sha": "909103b"
-   },
-   {
-    "name": "Check (Learn)",
-    "branch": "dev",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-18T07:57:13Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/44262889573",
     "sha": "909103b"
    },
    {
@@ -304,22 +308,23 @@
   "status": "green",
   "signals": [],
   "ai": {
-   "headline": "Repo-Status unverändert: Dev/Master synchron, CI für `909103b1` erfolgreich",
-   "lage": "Der dev-Branch ist mit dem master-Branch auf Commit `909103b1` synchronisiert. Alle relevanten Workflows (\"Check (Learn)\", \"Auto-Merge (grüner Check Learn)\" auf `dev` und \"Live Deploy (Learn master)\" auf `master`) wurden für diesen Commit erfolgreich abgeschlossen. Es gibt keine unpromoted Commits.",
+   "headline": "Dev-Branch 1 Commit voraus, Workflows für `7e21b454` laufen",
+   "lage": "Der dev-Branch ist mit Commit `7e21b454` einen Commit vor dem master-Branch. Die Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für diesen Commit sind aktuell in Bearbeitung. Der master-Branch verbleibt auf Commit `909103b1`, dessen Live Deploy erfolgreich abgeschlossen wurde.",
    "auffaelligkeiten": [
     {
      "level": "info",
-     "text": "Der `pushed_at`-Zeitstempel des Repositories (`2026-11-23T15:20:09Z`) ist neuer als der letzte gemeinsame Commit `909103b1` auf `dev` und `master` (`2026-11-18T07:57:10Z`), was auf andere Repository-Aktivitäten hindeutet."
+     "text": "Workflows \"Check (Learn)\" und \"Auto-Merge (grüner Check Learn)\" für den dev-Head `7e21b454` sind seit 2026-11-23T18:11:56Z in Bearbeitung."
     }
    ],
    "naechste_schritte": [
+    "Überprüfe den Status der Workflows für `7e21b454`.",
     "Prüfe `GEMINI_API_KEY` und `SYNC_TOKEN` als Actions-Secrets gemäß `NEXT.md`.",
     "Überprüfe Erreichbarkeit und Funktion der Live-Seite https://learn-vos.web.app."
    ],
-   "veraendert": "Der Kernstatus (Branch-Synchronisation, CI-Erfolg für `909103b1`) ist unverändert gegenüber der letzten Einschätzung.",
+   "veraendert": "Der dev-Branch ist nicht mehr mit dem master-Branch synchronisiert, sondern liegt mit Commit `7e21b454` einen Commit voraus, dessen Workflows aktuell laufen.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-23T18:03:57+00:00"
+  "ai_at": "2026-11-23T18:12:42+00:00"
  }
 }
