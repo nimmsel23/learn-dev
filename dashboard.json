@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-22T12:50:03+00:00",
+  "generated_at": "2026-11-23T15:19:30+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-21T20:08:56Z",
+   "pushed_at": "2026-11-22T12:50:17Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -148,10 +148,6 @@
   ],
   "activity": [
    {
-    "day": "2026-11-02",
-    "n": 0
-   },
-   {
     "day": "2026-11-03",
     "n": 0
    },
@@ -230,6 +226,10 @@
    {
     "day": "2026-11-22",
     "n": 0
+   },
+   {
+    "day": "2026-11-23",
+    "n": 0
    }
   ],
   "workflows": [
@@ -305,7 +305,7 @@
   "signals": [],
   "ai": {
    "headline": "Repo-Status unverändert: Dev/Master synchron, CI für `909103b1` erfolgreich",
-   "lage": "Der dev-Branch ist mit dem master-Branch auf Commit `909103b1` synchronisiert. Alle Workflows für diesen Commit auf `dev` (\"Check (Learn)\", \"Auto-Merge (grüner Check Learn)\") und `master` (\"Live Deploy (Learn master)\") wurden erfolgreich abgeschlossen. Es sind keine unpromoted Commits vorhanden.",
+   "lage": "Der dev-Branch ist mit dem master-Branch auf Commit `909103b1` synchronisiert. Alle relevanten Workflows (\"Check (Learn)\", \"Auto-Merge (grüner Check Learn)\" auf `dev` und \"Live Deploy (Learn master)\" auf `master`) wurden für diesen Commit erfolgreich abgeschlossen. Es gibt keine unpromoted Commits.",
    "auffaelligkeiten": [],
    "naechste_schritte": [
     "Prüfe `GEMINI_API_KEY` und `SYNC_TOKEN` als Actions-Secrets gemäß `NEXT.md`.",
@@ -315,6 +315,6 @@
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-22T12:50:05+00:00"
+  "ai_at": "2026-11-23T15:19:53+00:00"
  }
 }
