@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-23T15:19:30+00:00",
+  "generated_at": "2026-11-23T18:03:55+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-22T12:50:17Z",
+   "pushed_at": "2026-11-23T15:20:09Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -306,15 +306,20 @@
   "ai": {
    "headline": "Repo-Status unverändert: Dev/Master synchron, CI für `909103b1` erfolgreich",
    "lage": "Der dev-Branch ist mit dem master-Branch auf Commit `909103b1` synchronisiert. Alle relevanten Workflows (\"Check (Learn)\", \"Auto-Merge (grüner Check Learn)\" auf `dev` und \"Live Deploy (Learn master)\" auf `master`) wurden für diesen Commit erfolgreich abgeschlossen. Es gibt keine unpromoted Commits.",
-   "auffaelligkeiten": [],
+   "auffaelligkeiten": [
+    {
+     "level": "info",
+     "text": "Der `pushed_at`-Zeitstempel des Repositories (`2026-11-23T15:20:09Z`) ist neuer als der letzte gemeinsame Commit `909103b1` auf `dev` und `master` (`2026-11-18T07:57:10Z`), was auf andere Repository-Aktivitäten hindeutet."
+    }
+   ],
    "naechste_schritte": [
     "Prüfe `GEMINI_API_KEY` und `SYNC_TOKEN` als Actions-Secrets gemäß `NEXT.md`.",
     "Überprüfe Erreichbarkeit und Funktion der Live-Seite https://learn-vos.web.app."
    ],
-   "veraendert": "",
+   "veraendert": "Der Kernstatus (Branch-Synchronisation, CI-Erfolg für `909103b1`) ist unverändert gegenüber der letzten Einschätzung.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-23T15:19:53+00:00"
+  "ai_at": "2026-11-23T18:03:57+00:00"
  }
 }
