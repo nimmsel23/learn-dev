@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-24T05:10:08+00:00",
+  "generated_at": "2026-11-24T15:12:57+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-23T18:13:08Z",
+   "pushed_at": "2026-11-24T09:41:04Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -21,14 +21,62 @@
    "dev_behind": 0,
    "dev_ahead": 0,
    "oldest_unpromoted": null,
-   "dev_head": "7e21b454 2026-11-23T19:11:53+01:00",
-   "master_head": "7e21b454 2026-11-23T19:11:53+01:00"
+   "dev_head": "32f639c9 2026-11-24T10:39:34+01:00",
+   "master_head": "32f639c9 2026-11-24T10:39:34+01:00"
   },
   "work": {
    "branch": "master",
-   "sha": "7e21b45446f937dd4946789ca64cbd3b5fa68908"
+   "sha": "32f639c9d1952b89cd6f7069fa1fadbb3e75bb08"
   },
   "commits": [
+   {
+    "sha": "32f639c9",
+    "date": "2026-11-24T10:39:34+01:00",
+    "author": "nimmsel23",
+    "subject": "ci: Merge nur mit --match-head-commit des geprüften Heads"
+   },
+   {
+    "sha": "49490cab",
+    "date": "2026-11-24T10:38:33+01:00",
+    "author": "nimmsel23",
+    "subject": "ci: keine Zweitfreigabe mehr, Merge sobald Checks grün (Owner Daniel 24.11.2026 10:33)"
+   },
+   {
+    "sha": "573099ce",
+    "date": "2026-11-24T10:26:16+01:00",
+    "author": "nimmsel23",
+    "subject": "fix(ci): Approval zählt nicht bei offenem Security-Befund HIGH/CRITICAL"
+   },
+   {
+    "sha": "0b2cbdc4",
+    "date": "2026-11-24T10:19:05+01:00",
+    "author": "nimmsel23",
+    "subject": "fix(ci): Org-Bot fail-closed, Merge-Logik ist Klasse B (Security Review vos#125)"
+   },
+   {
+    "sha": "092d8654",
+    "date": "2026-11-24T10:11:34+01:00",
+    "author": "nimmsel23",
+    "subject": "ci: Approval-Agent-Freigabe zählt als peer-ok (Daniel 24.11.2026 10:08)"
+   },
+   {
+    "sha": "4d8bc983",
+    "date": "2026-11-24T08:46:35+01:00",
+    "author": "nimmsel23",
+    "subject": "ci: Org-Bot/ci-heal mit zwei Zeitplan-Slots abseits der vollen Stunde + repository_dispatch"
+   },
+   {
+    "sha": "9d15b336",
+    "date": "2026-11-24T08:41:11+01:00",
+    "author": "nimmsel23",
+    "subject": "ci(org-bot): v2 wartet auf PR-Events auf angemeldete Checks"
+   },
+   {
+    "sha": "3fd90f6f",
+    "date": "2026-11-24T08:39:50+01:00",
+    "author": "nimmsel23",
+    "subject": "ci: Org-Bot v2 und CI-Heilung aus Vorlage (vos cto/tools)"
+   },
    {
     "sha": "7e21b454",
     "date": "2026-11-23T19:11:53+01:00",
@@ -100,54 +148,6 @@
     "date": "2026-11-14T23:12:51+01:00",
     "author": "Alpha",
     "subject": "merge(master): master → dev (vos-release)"
-   },
-   {
-    "sha": "d6f6e57f",
-    "date": "2026-11-13T01:11:23+01:00",
-    "author": "Alpha",
-    "subject": "chore(portal): portal.mjs + docs/apps.* aus vitalos vos-portal --all synchronisiert"
-   },
-   {
-    "sha": "6e039693",
-    "date": "2026-11-13T01:08:57+01:00",
-    "author": "Alpha",
-    "subject": "feat(ci): Living Dashboard als GitHub Page"
-   },
-   {
-    "sha": "44effb52",
-    "date": "2026-11-12T02:27:18+01:00",
-    "author": "Alpha",
-    "subject": "ci: restore Gemini + Merge-Agent on master (full automation)"
-   },
-   {
-    "sha": "0b16af6f",
-    "date": "2026-11-12T02:19:57+01:00",
-    "author": "Alpha",
-    "subject": "ci: restore Gemini repair + Merge-Agent (full automation)"
-   },
-   {
-    "sha": "0ef63440",
-    "date": "2026-11-11T19:11:58+01:00",
-    "author": "Alpha",
-    "subject": "ci: drop Gemini repair and Merge-Agent (simplicity)"
-   },
-   {
-    "sha": "8945c377",
-    "date": "2026-11-09T22:37:07+01:00",
-    "author": "Alpha",
-    "subject": "ci: freeze Push-CI — Repo ausgelaufen (Quelle fitness-dev)"
-   },
-   {
-    "sha": "f945c427",
-    "date": "2026-11-09T22:22:24+01:00",
-    "author": "Alpha",
-    "subject": "chore(tooling): engines, Biome scripts-format, knip, smoke in Check"
-   },
-   {
-    "sha": "513974f3",
-    "date": "2026-11-09T20:19:00+01:00",
-    "author": "Alpha",
-    "subject": "fix(ci): Fitness-KB Checkout mit submodules (Yuhonas vendor)"
    }
   ],
   "activity": [
@@ -233,7 +233,7 @@
    },
    {
     "day": "2026-11-24",
-    "n": 0
+    "n": 8
    }
   ],
   "workflows": [
@@ -243,9 +243,9 @@
     "event": "workflow_dispatch",
     "status": "completed",
     "conclusion": "success",
-    "created_at": "2026-11-23T18:13:09Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45236005055",
-    "sha": "7e21b45"
+    "created_at": "2026-11-24T09:41:06Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45367523499",
+    "sha": "32f639c"
    },
    {
     "name": "Auto-Merge (grüner Check Learn)",
@@ -253,9 +253,9 @@
     "event": "workflow_run",
     "status": "completed",
     "conclusion": "success",
-    "created_at": "2026-11-23T18:13:03Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45235985863",
-    "sha": "909103b"
+    "created_at": "2026-11-24T09:40:56Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45367496867",
+    "sha": "573099c"
    },
    {
     "name": "Check (Learn)",
@@ -263,19 +263,19 @@
     "event": "push",
     "status": "completed",
     "conclusion": "success",
-    "created_at": "2026-11-23T18:11:56Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45235790019",
-    "sha": "7e21b45"
+    "created_at": "2026-11-24T09:39:37Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45367290545",
+    "sha": "32f639c"
    },
    {
     "name": "Auto-Merge (grüner Check Learn)",
     "branch": "dev",
     "event": "push",
     "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-23T18:11:56Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45235790015",
-    "sha": "7e21b45"
+    "conclusion": "cancelled",
+    "created_at": "2026-11-24T09:39:37Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45367290288",
+    "sha": "32f639c"
    },
    {
     "name": "PR-AutoMerge (Dependabot -> dev)",
@@ -308,23 +308,27 @@
   "status": "green",
   "signals": [],
   "ai": {
-   "headline": "Branches dev/master synchronisiert, Live Deploy für `7e21b454` erfolgreich",
-   "lage": "Die Branches `dev` und `master` sind auf dem gleichen Commit `7e21b454`. Alle zugehörigen Workflows, inklusive \"Live Deploy (Learn master)\" für `7e21b454`, wurden erfolgreich abgeschlossen.",
+   "headline": "Branches dev/master auf 32f639c9 synchronisiert, Live Deploy erfolgreich",
+   "lage": "Die Branches `dev` und `master` sind auf dem Commit `32f639c9` synchronisiert. Der Workflow \"Live Deploy (Learn master)\" für diesen Commit wurde erfolgreich abgeschlossen.",
    "auffaelligkeiten": [
     {
      "level": "info",
-     "text": "Die `NEXT.md` weist weiterhin auf die Prüfung der Actions-Secrets `GEMINI_API_KEY` und `SYNC_TOKEN` hin."
+     "text": "Der Workflow \"Auto-Merge (grüner Check Learn)\" für `32f639c` auf dem `dev`-Branch wurde abgebrochen, während der `master`-Branch erfolgreich deployt wurde."
+    },
+    {
+     "level": "info",
+     "text": "Mehrere Commits (`32f639c9`, `49490cab`, `573099ce`, `0b2cbdc4`, `092d8654`) aktualisieren die CI-Merge- und Approval-Logik, u.a. mit Änderungen an der Zweitfreigabe und Security-Befunden."
     }
    ],
    "naechste_schritte": [
     "Prüfe `GEMINI_API_KEY` und `SYNC_TOKEN` als Actions-Secrets gemäß `NEXT.md`.",
-    "Überprüfe Erreichbarkeit und Funktion der Live-Seite https://learn-vos.web.app.",
-    "Beobachte den nächsten Check bis zum grünen Promote/Deploy, wie in `NEXT.md` beschrieben."
+    "Beobachte einen absichtlich roten Check bis zum grünen Promote/Deploy, wie in `NEXT.md` beschrieben.",
+    "Überprüfe Erreichbarkeit und Funktion der Live-Seite https://learn-vos.web.app."
    ],
-   "veraendert": "Gegenüber der letzten Einschätzung sind die Branches `dev` und `master` nun auf dem gleichen Commit `7e21b454`, und alle zugehörigen Workflows, inklusive Live Deploy, wurden erfolgreich abgeschlossen.",
+   "veraendert": "Die Branches `dev` und `master` sind auf den neueren Commit `32f639c9` aktualisiert und synchronisiert, und der zugehörige Live Deploy war erfolgreich.",
    "fragen": [],
    "model": "gemini-2.5-flash"
   },
-  "ai_at": "2026-11-24T05:10:11+00:00"
+  "ai_at": "2026-11-24T15:12:59+00:00"
  }
 }
