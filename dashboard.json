@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-24T15:12:57+00:00",
+  "generated_at": "2026-11-25T14:52:56+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-24T09:41:04Z",
+   "pushed_at": "2026-11-24T15:13:13Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -152,10 +152,6 @@
   ],
   "activity": [
    {
-    "day": "2026-11-04",
-    "n": 0
-   },
-   {
     "day": "2026-11-05",
     "n": 4
    },
@@ -234,9 +230,33 @@
    {
     "day": "2026-11-24",
     "n": 8
+   },
+   {
+    "day": "2026-11-25",
+    "n": 0
    }
   ],
   "workflows": [
+   {
+    "name": "CI-Heilung (rote Läufe wiederholen)",
+    "branch": "master",
+    "event": "schedule",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-25T13:27:06Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45623711785",
+    "sha": "32f639c"
+   },
+   {
+    "name": "Org-Bot (PR anlegen & mergen)",
+    "branch": "master",
+    "event": "schedule",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-25T13:00:00Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45619139564",
+    "sha": "32f639c"
+   },
    {
     "name": "Live Deploy (Learn master)",
     "branch": "master",
@@ -286,16 +306,6 @@
     "created_at": "2026-11-14T20:53:20Z",
     "url": "https://github.com/nimmsel23/learn-dev/actions/runs/43639859227",
     "sha": "44effb5"
-   },
-   {
-    "name": "Preview (Learn dev)",
-    "branch": "dev",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-09T21:22:29Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/42701889787",
-    "sha": "f945c42"
    }
   ],
   "issues": [],
@@ -307,28 +317,7 @@
  "assessment": {
   "status": "green",
   "signals": [],
-  "ai": {
-   "headline": "Branches dev/master auf 32f639c9 synchronisiert, Live Deploy erfolgreich",
-   "lage": "Die Branches `dev` und `master` sind auf dem Commit `32f639c9` synchronisiert. Der Workflow \"Live Deploy (Learn master)\" für diesen Commit wurde erfolgreich abgeschlossen.",
-   "auffaelligkeiten": [
-    {
-     "level": "info",
-     "text": "Der Workflow \"Auto-Merge (grüner Check Learn)\" für `32f639c` auf dem `dev`-Branch wurde abgebrochen, während der `master`-Branch erfolgreich deployt wurde."
-    },
-    {
-     "level": "info",
-     "text": "Mehrere Commits (`32f639c9`, `49490cab`, `573099ce`, `0b2cbdc4`, `092d8654`) aktualisieren die CI-Merge- und Approval-Logik, u.a. mit Änderungen an der Zweitfreigabe und Security-Befunden."
-    }
-   ],
-   "naechste_schritte": [
-    "Prüfe `GEMINI_API_KEY` und `SYNC_TOKEN` als Actions-Secrets gemäß `NEXT.md`.",
-    "Beobachte einen absichtlich roten Check bis zum grünen Promote/Deploy, wie in `NEXT.md` beschrieben.",
-    "Überprüfe Erreichbarkeit und Funktion der Live-Seite https://learn-vos.web.app."
-   ],
-   "veraendert": "Die Branches `dev` und `master` sind auf den neueren Commit `32f639c9` aktualisiert und synchronisiert, und der zugehörige Live Deploy war erfolgreich.",
-   "fragen": [],
-   "model": "gemini-2.5-flash"
-  },
-  "ai_at": "2026-11-24T15:12:59+00:00"
+  "ai": null,
+  "ai_at": null
  }
 }
