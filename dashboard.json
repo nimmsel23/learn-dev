@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-25T14:52:56+00:00",
+  "generated_at": "2026-11-26T14:21:40+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-24T15:13:13Z",
+   "pushed_at": "2026-11-25T14:53:02Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -152,12 +152,8 @@
   ],
   "activity": [
    {
-    "day": "2026-11-05",
-    "n": 4
-   },
-   {
     "day": "2026-11-06",
-    "n": 5
+    "n": 0
    },
    {
     "day": "2026-11-07",
@@ -234,6 +230,10 @@
    {
     "day": "2026-11-25",
     "n": 0
+   },
+   {
+    "day": "2026-11-26",
+    "n": 0
    }
   ],
   "workflows": [
@@ -243,8 +243,8 @@
     "event": "schedule",
     "status": "completed",
     "conclusion": "success",
-    "created_at": "2026-11-25T13:27:06Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45623711785",
+    "created_at": "2026-11-26T04:57:44Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45758472467",
     "sha": "32f639c"
    },
    {
@@ -253,8 +253,8 @@
     "event": "schedule",
     "status": "completed",
     "conclusion": "success",
-    "created_at": "2026-11-25T13:00:00Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45619139564",
+    "created_at": "2026-11-26T04:26:51Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45755251818",
     "sha": "32f639c"
    },
    {
