@@ -1,12 +1,12 @@
 {
  "evidence": {
-  "generated_at": "2026-11-27T14:15:45+00:00",
+  "generated_at": "2026-11-28T13:31:51+00:00",
   "repo": "nimmsel23/learn-dev",
   "meta": {
    "name": "learn-dev",
    "description": "VOS Learn PWA",
    "html_url": "https://github.com/nimmsel23/learn-dev",
-   "pushed_at": "2026-11-26T14:21:45Z",
+   "pushed_at": "2026-11-28T10:48:00Z",
    "default_branch": "master",
    "visibility": "public",
    "pages_url": "https://nimmsel23.github.io/learn-dev/"
@@ -19,9 +19,9 @@
    "main": "master",
    "has_dev": true,
    "dev_behind": 0,
-   "dev_ahead": 0,
-   "oldest_unpromoted": null,
-   "dev_head": "32f639c9 2026-11-24T10:39:34+01:00",
+   "dev_ahead": 2,
+   "oldest_unpromoted": "2026-11-21T19:31:17+01:00",
+   "dev_head": "fc2b3bf1 2026-11-28T11:47:35+01:00",
    "master_head": "32f639c9 2026-11-24T10:39:34+01:00"
   },
   "work": {
@@ -152,10 +152,6 @@
   ],
   "activity": [
    {
-    "day": "2026-11-07",
-    "n": 2
-   },
-   {
     "day": "2026-11-08",
     "n": 0
    },
@@ -234,17 +230,51 @@
    {
     "day": "2026-11-27",
     "n": 0
+   },
+   {
+    "day": "2026-11-28",
+    "n": 0
    }
   ],
   "workflows": [
+   {
+    "name": "Auto-Merge (grüner Check Learn)",
+    "branch": "master",
+    "event": "workflow_run",
+    "status": "completed",
+    "conclusion": "skipped",
+    "created_at": "2026-11-28T10:48:40Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/46136914761",
+    "sha": "32f639c"
+   },
+   {
+    "name": "Check (Learn)",
+    "branch": "dev",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "failure",
+    "created_at": "2026-11-28T10:48:02Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/46136866903",
+    "sha": "fc2b3bf"
+   },
+   {
+    "name": "Auto-Merge (grüner Check Learn)",
+    "branch": "dev",
+    "event": "push",
+    "status": "completed",
+    "conclusion": "success",
+    "created_at": "2026-11-28T10:48:02Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/46136866887",
+    "sha": "fc2b3bf"
+   },
    {
     "name": "CI-Heilung (rote Läufe wiederholen)",
     "branch": "master",
     "event": "schedule",
     "status": "completed",
     "conclusion": "success",
-    "created_at": "2026-11-27T08:14:14Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45964115119",
+    "created_at": "2026-11-28T10:16:23Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/46134382919",
     "sha": "32f639c"
    },
    {
@@ -253,8 +283,8 @@
     "event": "schedule",
     "status": "completed",
     "conclusion": "success",
-    "created_at": "2026-11-27T05:24:25Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45945614522",
+    "created_at": "2026-11-28T05:00:15Z",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/46110081921",
     "sha": "32f639c"
    },
    {
@@ -265,36 +295,6 @@
     "conclusion": "success",
     "created_at": "2026-11-24T09:41:06Z",
     "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45367523499",
-    "sha": "32f639c"
-   },
-   {
-    "name": "Auto-Merge (grüner Check Learn)",
-    "branch": "master",
-    "event": "workflow_run",
-    "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-24T09:40:56Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45367496867",
-    "sha": "573099c"
-   },
-   {
-    "name": "Check (Learn)",
-    "branch": "dev",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "success",
-    "created_at": "2026-11-24T09:39:37Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45367290545",
-    "sha": "32f639c"
-   },
-   {
-    "name": "Auto-Merge (grüner Check Learn)",
-    "branch": "dev",
-    "event": "push",
-    "status": "completed",
-    "conclusion": "cancelled",
-    "created_at": "2026-11-24T09:39:37Z",
-    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/45367290288",
     "sha": "32f639c"
    },
    {
@@ -315,8 +315,20 @@
   ]
  },
  "assessment": {
-  "status": "green",
-  "signals": [],
+  "status": "red",
+  "signals": [
+   {
+    "level": "red",
+    "key": "ci:Check (Learn):dev",
+    "text": "„Check (Learn)“ auf dev ist rot (failure, fc2b3bf)",
+    "url": "https://github.com/nimmsel23/learn-dev/actions/runs/46136866903"
+   },
+   {
+    "level": "yellow",
+    "key": "promote",
+    "text": "2 Commit(s) auf dev seit 6.8 Tagen nicht auf master promotet"
+   }
+  ],
   "ai": null,
   "ai_at": null
  }
